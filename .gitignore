@@ -1,0 +1,7 @@
+/.php_cs.cache
+/.phpunit.result.cache
+/composer.lock
+/studio.json
+/vendor
+/vendor-bin/*/composer.lock
+/vendor-bin/*/vendor

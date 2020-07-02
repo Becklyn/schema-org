@@ -1,0 +1,68 @@
+version: 2
+
+jobs:
+    php:
+        docker:
+            - image: becklyn/circleci-php7.4:latest
+
+        steps:
+            - checkout
+
+            # Download and cache dependencies
+            - restore_cache:
+                  name: Restore Composer Main Cache
+                  keys:
+                      - composer-dependencies-v2-{{ checksum "composer.json" }}
+                      # fallback to using the latest cache if no exact match is found
+                      - composer-dependencies-v2-
+                      -
+            - restore_cache:
+                  name: Restore Composer Bin Cache
+                  keys:
+                      - composer-bin-dependencies-v2-{{ checksum "vendor-bin/test/composer.json" }}
+                      # fallback to using the latest cache if no exact match is found
+                      - composer-bin-dependencies-v2-
+
+            - run:
+                  name: Composer Install
+                  command: COMPOSER_MEMORY_LIMIT=-1 composer install --no-interaction --prefer-dist --no-progress --no-suggest
+            - run:
+                  name: Install Composer Normalize + Bin Plugin
+                  command: COMPOSER_MEMORY_LIMIT=-1 composer global require localheinz/composer-normalize bamarni/composer-bin-plugin  --no-interaction --prefer-dist --no-progress --no-suggest
+            - run:
+                  name: Composer Install (bin)
+                  command: COMPOSER_MEMORY_LIMIT=-1 composer bin all install --no-interaction --prefer-dist --no-progress --no-suggest
+
+
+            # RUN
+            - run:
+                  name: Composer Normalize
+                  command: COMPOSER_MEMORY_LIMIT=-1 composer normalize --indent-size 4 --indent-style space --dry-run
+            - run:
+                  name: PHP CS Fixer
+                  command: ./vendor/bin/php-cs-fixer fix --diff --config vendor-bin/test/vendor/becklyn/php-cs/.php_cs.dist --dry-run --no-interaction
+            - run:
+                  name: PHPUnit
+                  command: ./vendor/bin/simple-phpunit -c phpunit.xml --colors=always --testdox
+            # phpstan (needs to run after simple-phpunit, as it needs the installed phpunit)
+            - run:
+                  name: PhpStan
+                  command: ./vendor/bin/phpstan analyse --memory-limit 4G --ansi -c vendor-bin/test/vendor/becklyn/php-cs/phpstan/lib.neon src --no-interaction --no-progress
+
+            # save cache at the end, to also store PHPUnit
+            - save_cache:
+                  name: Save Composer Main Cache
+                  paths:
+                      - ./vendor
+                  key: composer-dependencies-v2-{{ checksum "composer.json" }}
+            - save_cache:
+                  name: Save Composer Bin Cache
+                  paths:
+                      - ./vendor-bin/test/vendor
+                  key: composer-bin-dependencies-v2-{{ checksum "vendor-bin/test/composer.json" }}
+
+workflows:
+    version: 2
+    all:
+        jobs:
+            - php
