@@ -64,3 +64,4 @@ Render meta data tag
 
 To render the JSON-LD meta data tag, call the Twig function `{{ schema_org_meta_data(myAppEntity) }}` and pass in an optional `usage` and `context` parameter,
 if you need to tweak the output based on the current render context.
+

@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Becklyn\SchemaOrg\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,SchemaOrgBundle.php}'
+
+    Becklyn\SchemaOrg\Schema\MetaDataNormalizerRegistry:
+        $normalizers: !tagged schema_org.metadata_normalizer
+
+    Becklyn\SchemaOrg\SchemaBuilder\SchemaBuilderRegistry:
+        $schemaBuilders: !tagged schema_org.schema_builder
