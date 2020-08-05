@@ -58,7 +58,7 @@ class TypeChecker
 
     public static function ensureIsValidValue ($value, bool $isOptional = self::REQUIRED, ...$allowedTypes) : void
     {
-        if (!self::isValidValue($value, $isOptional, $allowedTypes))
+        if (!self::isValidValue($value, $isOptional, ...$allowedTypes))
         {
             throw new UnexpectedTypeException(
                 $value,
