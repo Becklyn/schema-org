@@ -26,8 +26,10 @@ class PublicationEvent extends Event
     //region Withers
     /**
      * @param Organization|Person|null $publishedBy
+     *
+     * @return static
      */
-    public function withPublishedBy ($publishedBy) : self
+    public function withPublishedBy ($publishedBy)
     {
         TypeChecker::ensureIsValidValue($publishedBy, TypeChecker::OPTIONAL, Organization::class, Person::class);
 

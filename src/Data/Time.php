@@ -39,7 +39,10 @@ class Time implements SchemaOrgDataInterface
 
 
     //region Withers
-    public function withCloses (?OpeningHoursSpecification $closes) : self
+    /**
+     * @return static
+     */
+    public function withCloses (?OpeningHoursSpecification $closes)
     {
         $clone = clone $this;
         $clone->closes = $closes;
@@ -47,7 +50,10 @@ class Time implements SchemaOrgDataInterface
     }
 
 
-    public function withEndTime (?Schedule $endTime) : self
+    /**
+     * @return static
+     */
+    public function withEndTime (?Schedule $endTime)
     {
         $clone = clone $this;
         $clone->endTime = $endTime;
@@ -55,7 +61,10 @@ class Time implements SchemaOrgDataInterface
     }
 
 
-    public function withStartTime (?Schedule $startTime) : self
+    /**
+     * @return static
+     */
+    public function withStartTime (?Schedule $startTime)
     {
         $clone = clone $this;
         $clone->startTime = $startTime;
@@ -63,7 +72,10 @@ class Time implements SchemaOrgDataInterface
     }
 
 
-    public function withOpens (?OpeningHoursSpecification $opens) : self
+    /**
+     * @return static
+     */
+    public function withOpens (?OpeningHoursSpecification $opens)
     {
         $clone = clone $this;
         $clone->opens = $opens;

@@ -54,7 +54,10 @@ class QuantitativeValue implements SchemaOrgDataInterface
 
 
     //region Withers
-    public function withMinValue (?int $minValue) : self
+    /**
+     * @return static
+     */
+    public function withMinValue (?int $minValue)
     {
         $clone = clone $this;
         $clone->minValue = $minValue;
@@ -62,7 +65,10 @@ class QuantitativeValue implements SchemaOrgDataInterface
     }
 
 
-    public function withMaxValue (?int $maxValue) : self
+    /**
+     * @return static
+     */
+    public function withMaxValue (?int $maxValue)
     {
         $clone = clone $this;
         $clone->maxValue = $maxValue;
@@ -70,7 +76,10 @@ class QuantitativeValue implements SchemaOrgDataInterface
     }
 
 
-    public function withUnitCode (?string $unitCode) : self
+    /**
+     * @return static
+     */
+    public function withUnitCode (?string $unitCode)
     {
         $clone = clone $this;
         $clone->unitCode = $unitCode;
@@ -78,7 +87,10 @@ class QuantitativeValue implements SchemaOrgDataInterface
     }
 
 
-    public function withUnitText (?string $unitText) : self
+    /**
+     * @return static
+     */
+    public function withUnitText (?string $unitText)
     {
         $clone = clone $this;
         $clone->unitText = $unitText;
@@ -88,8 +100,10 @@ class QuantitativeValue implements SchemaOrgDataInterface
 
     /**
      * @param bool|float|int|string|null $value
+     *
+     * @return static
      */
-    public function withValue ($value) : self
+    public function withValue ($value)
     {
         TypeChecker::ensureIsValidValue($value, TypeChecker::OPTIONAL, "bool", "float", "int", "string");
 

@@ -96,7 +96,10 @@ class Place extends Thing
 
 
     //region Withers
-    public function withAddress (?PostalAddress $address) : self
+    /**
+     * @return static
+     */
+    public function withAddress (?PostalAddress $address)
     {
         $clone = clone $this;
         $clone->address = $address;
@@ -106,8 +109,10 @@ class Place extends Thing
 
     /**
      * @param string|float|null $latitude
+     *
+     * @return static
      */
-    public function withLatitude ($latitude) : self
+    public function withLatitude ($latitude)
     {
         TypeChecker::ensureIsValidValue($latitude, TypeChecker::OPTIONAL, "string", "float");
 
@@ -117,7 +122,10 @@ class Place extends Thing
     }
 
 
-    public function withLogo (?string $logo) : self
+    /**
+     * @return static
+     */
+    public function withLogo (?string $logo)
     {
         $clone = clone $this;
         $clone->logo = $logo;
@@ -125,9 +133,13 @@ class Place extends Thing
     }
 
 
+
     /**
+     * @param string|float|null $latitude
+     *
+     * @return static
      */
-    public function withLongitude ($longitude) : self
+    public function withLongitude ($longitude)
     {
         TypeChecker::ensureIsValidValue($longitude, TypeChecker::OPTIONAL, "string", "float");
 
@@ -137,7 +149,10 @@ class Place extends Thing
     }
 
 
-    public function withMaximumAttendeeCapacity (?int $maximumAttendeeCapacity) : self
+    /**
+     * @return static
+     */
+    public function withMaximumAttendeeCapacity (?int $maximumAttendeeCapacity)
     {
         $clone = clone $this;
         $clone->maximumAttendeeCapacity = $maximumAttendeeCapacity;
@@ -145,7 +160,10 @@ class Place extends Thing
     }
 
 
-    public function withOpeningHoursSpecification (?OpeningHoursSpecification $openingHoursSpecification) : self
+    /**
+     * @return static
+     */
+    public function withOpeningHoursSpecification (?OpeningHoursSpecification $openingHoursSpecification)
     {
         $clone = clone $this;
         $clone->openingHoursSpecification = $openingHoursSpecification;
@@ -153,7 +171,10 @@ class Place extends Thing
     }
 
 
-    public function withPublicAccess (?bool $publicAccess) : self
+    /**
+     * @return static
+     */
+    public function withPublicAccess (?bool $publicAccess)
     {
         $clone = clone $this;
         $clone->publicAccess = $publicAccess;
@@ -161,7 +182,10 @@ class Place extends Thing
     }
 
 
-    public function withSlogan (?string $slogan) : self
+    /**
+     * @return static
+     */
+    public function withSlogan (?string $slogan)
     {
         $clone = clone $this;
         $clone->slogan = $slogan;
@@ -169,7 +193,10 @@ class Place extends Thing
     }
 
 
-    public function withSmokingAllowed (?bool $smokingAllowed) : self
+    /**
+     * @return static
+     */
+    public function withSmokingAllowed (?bool $smokingAllowed)
     {
         $clone = clone $this;
         $clone->smokingAllowed = $smokingAllowed;
@@ -177,7 +204,10 @@ class Place extends Thing
     }
 
 
-    public function withSpecialOpeningHoursSpecification (?OpeningHoursSpecification $specialOpeningHoursSpecification) : self
+    /**
+     * @return static
+     */
+    public function withSpecialOpeningHoursSpecification (?OpeningHoursSpecification $specialOpeningHoursSpecification)
     {
         $clone = clone $this;
         $clone->specialOpeningHoursSpecification = $specialOpeningHoursSpecification;
@@ -185,7 +215,10 @@ class Place extends Thing
     }
 
 
-    public function withTelephone (?string $telephone) : self
+    /**
+     * @return static
+     */
+    public function withTelephone (?string $telephone)
     {
         $clone = clone $this;
         $clone->telephone = $telephone;

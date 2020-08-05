@@ -53,7 +53,10 @@ class PostalAddress extends ContactPoint
 
 
     //region Withers
-    public function withAddressCountry (?string $addressCountry) : self
+    /**
+     * @return static
+     */
+    public function withAddressCountry (?string $addressCountry)
     {
         $clone = clone $this;
         $clone->addressCountry = $addressCountry;
@@ -61,7 +64,10 @@ class PostalAddress extends ContactPoint
     }
 
 
-    public function withAddressLocality (?string $addressLocality) : self
+    /**
+     * @return static
+     */
+    public function withAddressLocality (?string $addressLocality)
     {
         $clone = clone $this;
         $clone->addressLocality = $addressLocality;
@@ -69,7 +75,10 @@ class PostalAddress extends ContactPoint
     }
 
 
-    public function withAddressRegion (?string $addressRegion) : self
+    /**
+     * @return static
+     */
+    public function withAddressRegion (?string $addressRegion)
     {
         $clone = clone $this;
         $clone->addressRegion = $addressRegion;
@@ -77,7 +86,10 @@ class PostalAddress extends ContactPoint
     }
 
 
-    public function withPostOfficeBoxNumber (?string $postOfficeBoxNumber) : self
+    /**
+     * @return static
+     */
+    public function withPostOfficeBoxNumber (?string $postOfficeBoxNumber)
     {
         $clone = clone $this;
         $clone->postOfficeBoxNumber = $postOfficeBoxNumber;
@@ -85,7 +97,10 @@ class PostalAddress extends ContactPoint
     }
 
 
-    public function withPostalCode (?string $postalCode) : self
+    /**
+     * @return static
+     */
+    public function withPostalCode (?string $postalCode)
     {
         $clone = clone $this;
         $clone->postalCode = $postalCode;
@@ -93,7 +108,10 @@ class PostalAddress extends ContactPoint
     }
 
 
-    public function withStreetAddress (?string $streetAddress) : self
+    /**
+     * @return static
+     */
+    public function withStreetAddress (?string $streetAddress)
     {
         $clone = clone $this;
         $clone->streetAddress = $streetAddress;

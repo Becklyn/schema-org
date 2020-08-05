@@ -67,7 +67,10 @@ class Thing implements SchemaOrgDataInterface
 
 
     //region Withers
-    public function withAlternateName (?string $alternateName) : self
+    /**
+     * @return static
+     */
+    public function withAlternateName (?string $alternateName)
     {
         $clone = clone $this;
         $clone->alternateName = $alternateName;
@@ -75,7 +78,10 @@ class Thing implements SchemaOrgDataInterface
     }
 
 
-    public function withDescription (?string $description) : self
+    /**
+     * @return static
+     */
+    public function withDescription (?string $description)
     {
         $clone = clone $this;
         $clone->description = $description;
@@ -83,7 +89,9 @@ class Thing implements SchemaOrgDataInterface
     }
 
 
-    public function withIdentifier (?string $identifier) : self
+    /**
+     * @return static
+     */
     public function withDisambiguatingDescription (?string $disambiguatingDescription)
     {
         $clone = clone $this;
@@ -92,6 +100,10 @@ class Thing implements SchemaOrgDataInterface
     }
 
 
+    /**
+     * @return static
+     */
+    public function withIdentifier (?string $identifier)
     {
         $clone = clone $this;
         $clone->identifier = $identifier;
@@ -99,7 +111,10 @@ class Thing implements SchemaOrgDataInterface
     }
 
 
-    public function withImage (?string $image) : self
+    /**
+     * @return static
+     */
+    public function withImage (?string $image)
     {
         $clone = clone $this;
         $clone->image = $image;
@@ -107,7 +122,10 @@ class Thing implements SchemaOrgDataInterface
     }
 
 
-    public function withName (?string $name) : self
+    /**
+     * @return static
+     */
+    public function withName (?string $name)
     {
         $clone = clone $this;
         $clone->name = $name;
@@ -115,7 +133,10 @@ class Thing implements SchemaOrgDataInterface
     }
 
 
-    public function withSameAs (?string $sameAs) : self
+    /**
+     * @return static
+     */
+    public function withSameAs (?string $sameAs)
     {
         $clone = clone $this;
         $clone->sameAs = $sameAs;
@@ -123,7 +144,10 @@ class Thing implements SchemaOrgDataInterface
     }
 
 
-    public function withUrl (?string $url) : self
+    /**
+     * @return static
+     */
+    public function withUrl (?string $url)
     {
         $clone = clone $this;
         $clone->url = $url;

@@ -67,7 +67,10 @@ class ContactPoint implements SchemaOrgDataInterface
 
 
     //region Withers
-    public function withAreaServed (?string $areaServed) : self
+    /**
+     * @return static
+     */
+    public function withAreaServed (?string $areaServed)
     {
         $clone = clone $this;
         $clone->areaServed = $areaServed;
@@ -75,7 +78,10 @@ class ContactPoint implements SchemaOrgDataInterface
     }
 
 
-    public function withAvailableLanguage (?string $availableLanguage) : self
+    /**
+     * @return static
+     */
+    public function withAvailableLanguage (?string $availableLanguage)
     {
         $clone = clone $this;
         $clone->availableLanguage = $availableLanguage;
@@ -83,7 +89,10 @@ class ContactPoint implements SchemaOrgDataInterface
     }
 
 
-    public function withContactType (?string $contactType) : self
+    /**
+     * @return static
+     */
+    public function withContactType (?string $contactType)
     {
         $clone = clone $this;
         $clone->contactType = $contactType;
@@ -91,7 +100,10 @@ class ContactPoint implements SchemaOrgDataInterface
     }
 
 
-    public function withEmail (?string $email) : self
+    /**
+     * @return static
+     */
+    public function withEmail (?string $email)
     {
         $clone = clone $this;
         $clone->email = $email;
@@ -99,7 +111,10 @@ class ContactPoint implements SchemaOrgDataInterface
     }
 
 
-    public function withFaxNumber (?string $faxNumber) : self
+    /**
+     * @return static
+     */
+    public function withFaxNumber (?string $faxNumber)
     {
         $clone = clone $this;
         $clone->faxNumber = $faxNumber;
@@ -107,7 +122,10 @@ class ContactPoint implements SchemaOrgDataInterface
     }
 
 
-    public function withHoursAvailable (?OpeningHoursSpecification $hoursAvailable) : self
+    /**
+     * @return static
+     */
+    public function withHoursAvailable (?OpeningHoursSpecification $hoursAvailable)
     {
         $clone = clone $this;
         $clone->hoursAvailable = $hoursAvailable;
@@ -115,7 +133,10 @@ class ContactPoint implements SchemaOrgDataInterface
     }
 
 
-    public function withProductSupported (?string $productSupported) : self
+    /**
+     * @return static
+     */
+    public function withProductSupported (?string $productSupported)
     {
         $clone = clone $this;
         $clone->productSupported = $productSupported;
@@ -123,7 +144,10 @@ class ContactPoint implements SchemaOrgDataInterface
     }
 
 
-    public function withTelephone (?string $telephone) : self
+    /**
+     * @return static
+     */
+    public function withTelephone (?string $telephone)
     {
         $clone = clone $this;
         $clone->telephone = $telephone;

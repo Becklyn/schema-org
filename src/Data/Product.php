@@ -189,7 +189,10 @@ class Product extends Thing
 
 
     //region Withers
-    public function withAudience (?string $audience) : self
+    /**
+     * @return static
+     */
+    public function withAudience (?string $audience)
     {
         $clone = clone $this;
         $clone->audience = $audience;
@@ -197,7 +200,10 @@ class Product extends Thing
     }
 
 
-    public function withAward (?string $award) : self
+    /**
+     * @return static
+     */
+    public function withAward (?string $award)
     {
         $clone = clone $this;
         $clone->award = $award;
@@ -205,7 +211,11 @@ class Product extends Thing
     }
 
 
-    public function withCategory (?string $category) : self
+    /**
+     * @param Brand|Organization|null $brand
+     *
+     * @return static
+     */
     public function withBrand ($brand)
     {
         TypeChecker::ensureIsValidValue($brand, TypeChecker::OPTIONAL, Brand::class, static::class);
@@ -216,6 +226,10 @@ class Product extends Thing
     }
 
 
+    /**
+     * @return static
+     */
+    public function withCategory (?string $category)
     {
         $clone = clone $this;
         $clone->category = $category;
@@ -223,7 +237,10 @@ class Product extends Thing
     }
 
 
-    public function withColor (?string $color) : self
+    /**
+     * @return static
+     */
+    public function withColor (?string $color)
     {
         $clone = clone $this;
         $clone->color = $color;
@@ -233,8 +250,10 @@ class Product extends Thing
 
     /**
      * @param QuantitativeValue|Distance|null $height
+     *
+     * @return static
      */
-    public function withHeight ($height) : self
+    public function withHeight ($height)
     {
         TypeChecker::ensureIsValidValue($height, TypeChecker::OPTIONAL, QuantitativeValue::class, Distance::class);
 
@@ -244,7 +263,10 @@ class Product extends Thing
     }
 
 
-    public function withIsAccessoryOrSparePartFor (?self $isAccessoryOrSparePartFor) : self
+    /**
+     * @return static
+     */
+    public function withIsAccessoryOrSparePartFor (?self $isAccessoryOrSparePartFor)
     {
         $clone = clone $this;
         $clone->isAccessoryOrSparePartFor = $isAccessoryOrSparePartFor;
@@ -252,7 +274,10 @@ class Product extends Thing
     }
 
 
-    public function withIsConsumableFor (?self $isConsumableFor) : self
+    /**
+     * @return static
+     */
+    public function withIsConsumableFor (?self $isConsumableFor)
     {
         $clone = clone $this;
         $clone->isConsumableFor = $isConsumableFor;
@@ -260,7 +285,10 @@ class Product extends Thing
     }
 
 
-    public function withIsRelatedTo (?self $isRelatedTo) : self
+    /**
+     * @return static
+     */
+    public function withIsRelatedTo (?self $isRelatedTo)
     {
         $clone = clone $this;
         $clone->isRelatedTo = $isRelatedTo;
@@ -268,7 +296,10 @@ class Product extends Thing
     }
 
 
-    public function withIsSimilarTo (?self $isSimilarTo) : self
+    /**
+     * @return static
+     */
+    public function withIsSimilarTo (?self $isSimilarTo)
     {
         $clone = clone $this;
         $clone->isSimilarTo = $isSimilarTo;
@@ -276,7 +307,10 @@ class Product extends Thing
     }
 
 
-    public function withItemCondition (?OfferItemCondition $itemCondition) : self
+    /**
+     * @return static
+     */
+    public function withItemCondition (?OfferItemCondition $itemCondition)
     {
         $clone = clone $this;
         $clone->itemCondition = $itemCondition;
@@ -284,7 +318,10 @@ class Product extends Thing
     }
 
 
-    public function withLogo (?string $logo) : self
+    /**
+     * @return static
+     */
+    public function withLogo (?string $logo)
     {
         $clone = clone $this;
         $clone->logo = $logo;
@@ -292,7 +329,10 @@ class Product extends Thing
     }
 
 
-    public function withManufacturer (?Organization $manufacturer) : self
+    /**
+     * @return static
+     */
+    public function withManufacturer (?Organization $manufacturer)
     {
         $clone = clone $this;
         $clone->manufacturer = $manufacturer;
@@ -302,8 +342,10 @@ class Product extends Thing
 
     /**
      * @param Product|string|null $material
+     *
+     * @return static
      */
-    public function withMaterial ($material) : self
+    public function withMaterial ($material)
     {
         TypeChecker::ensureIsValidValue($material, TypeChecker::OPTIONAL, static::class, "string");
 
@@ -313,7 +355,10 @@ class Product extends Thing
     }
 
 
-    public function withProductID (?string $productID) : self
+    /**
+     * @return static
+     */
+    public function withProductID (?string $productID)
     {
         $clone = clone $this;
         $clone->productID = $productID;
@@ -321,7 +366,10 @@ class Product extends Thing
     }
 
 
-    public function withProductionDate (?\DateTimeImmutable $productionDate) : self
+    /**
+     * @return static
+     */
+    public function withProductionDate (?\DateTimeImmutable $productionDate)
     {
         $clone = clone $this;
         $clone->productionDate = $productionDate;
@@ -329,7 +377,10 @@ class Product extends Thing
     }
 
 
-    public function withPurchaseDate (?\DateTimeImmutable $purchaseDate) : self
+    /**
+     * @return static
+     */
+    public function withPurchaseDate (?\DateTimeImmutable $purchaseDate)
     {
         $clone = clone $this;
         $clone->purchaseDate = $purchaseDate;
@@ -337,7 +388,10 @@ class Product extends Thing
     }
 
 
-    public function withReleaseDate (?\DateTimeImmutable $releaseDate) : self
+    /**
+     * @return static
+     */
+    public function withReleaseDate (?\DateTimeImmutable $releaseDate)
     {
         $clone = clone $this;
         $clone->releaseDate = $releaseDate;
@@ -345,7 +399,10 @@ class Product extends Thing
     }
 
 
-    public function withSku (?string $sku) : self
+    /**
+     * @return static
+     */
+    public function withSku (?string $sku)
     {
         $clone = clone $this;
         $clone->sku = $sku;
@@ -353,7 +410,10 @@ class Product extends Thing
     }
 
 
-    public function withSlogan (?string $slogan) : self
+    /**
+     * @return static
+     */
+    public function withSlogan (?string $slogan)
     {
         $clone = clone $this;
         $clone->slogan = $slogan;
@@ -361,7 +421,10 @@ class Product extends Thing
     }
 
 
-    public function withWeight (?QuantitativeValue $weight) : self
+    /**
+     * @return static
+     */
+    public function withWeight (?QuantitativeValue $weight)
     {
         $clone = clone $this;
         $clone->weight = $weight;
@@ -371,8 +434,10 @@ class Product extends Thing
 
     /**
      * @param QuantitativeValue|Distance|null $width
+     *
+     * @return static
      */
-    public function withWidth ($width) : self
+    public function withWidth ($width)
     {
         TypeChecker::ensureIsValidValue($width, TypeChecker::OPTIONAL, QuantitativeValue::class, Distance::class);
 

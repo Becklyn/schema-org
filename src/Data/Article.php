@@ -60,7 +60,10 @@ class Article extends CreativeWork
 
 
     //region Withers
-    public function withArticleBody (?string $articleBody) : self
+    /**
+     * @return static
+     */
+    public function withArticleBody (?string $articleBody)
     {
         $clone = clone $this;
         $clone->articleBody = $articleBody;
@@ -68,7 +71,10 @@ class Article extends CreativeWork
     }
 
 
-    public function withArticleSection (?string $articleSection) : self
+    /**
+     * @return static
+     */
+    public function withArticleSection (?string $articleSection)
     {
         $clone = clone $this;
         $clone->articleSection = $articleSection;
@@ -76,7 +82,10 @@ class Article extends CreativeWork
     }
 
 
-    public function withBackstory (?string $backstory) : self
+    /**
+     * @return static
+     */
+    public function withBackstory (?string $backstory)
     {
         $clone = clone $this;
         $clone->backstory = $backstory;
@@ -84,7 +93,10 @@ class Article extends CreativeWork
     }
 
 
-    public function withPageEnd (?int $pageEnd) : self
+    /**
+     * @return static
+     */
+    public function withPageEnd (?int $pageEnd)
     {
         $clone = clone $this;
         $clone->pageEnd = $pageEnd;
@@ -92,7 +104,10 @@ class Article extends CreativeWork
     }
 
 
-    public function withPageStart (?int $pageStart) : self
+    /**
+     * @return static
+     */
+    public function withPageStart (?int $pageStart)
     {
         $clone = clone $this;
         $clone->pageStart = $pageStart;
@@ -100,7 +115,10 @@ class Article extends CreativeWork
     }
 
 
-    public function withPagination (?string $pagination) : self
+    /**
+     * @return static
+     */
+    public function withPagination (?string $pagination)
     {
         $clone = clone $this;
         $clone->pagination = $pagination;
@@ -108,7 +126,10 @@ class Article extends CreativeWork
     }
 
 
-    public function withWordCount (?int $wordCount) : self
+    /**
+     * @return static
+     */
+    public function withWordCount (?int $wordCount)
     {
         $clone = clone $this;
         $clone->wordCount = $wordCount;

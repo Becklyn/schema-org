@@ -124,7 +124,10 @@ class Organization extends Thing
 
 
     //region Withers
-    public function withAddress (?PostalAddress $address) : self
+    /**
+     * @return static
+     */
+    public function withAddress (?PostalAddress $address)
     {
         $clone = clone $this;
         $clone->address = $address;
@@ -132,7 +135,10 @@ class Organization extends Thing
     }
 
 
-    public function withAreaServed (?string $areaServed) : self
+    /**
+     * @return static
+     */
+    public function withAreaServed (?string $areaServed)
     {
         $clone = clone $this;
         $clone->areaServed = $areaServed;
@@ -140,7 +146,10 @@ class Organization extends Thing
     }
 
 
-    public function withAward (?string $award) : self
+    /**
+     * @return static
+     */
+    public function withAward (?string $award)
     {
         $clone = clone $this;
         $clone->award = $award;
@@ -150,8 +159,10 @@ class Organization extends Thing
 
     /**
      * @param Brand|Organization|null $brand
+     *
+     * @return static
      */
-    public function withBrand ($brand) : self
+    public function withBrand ($brand)
     {
         TypeChecker::ensureIsValidValue($brand, TypeChecker::OPTIONAL, Brand::class, static::class);
 
@@ -161,7 +172,10 @@ class Organization extends Thing
     }
 
 
-    public function withContactPoint (?ContactPoint $contactPoint) : self
+    /**
+     * @return static
+     */
+    public function withContactPoint (?ContactPoint $contactPoint)
     {
         $clone = clone $this;
         $clone->contactPoint = $contactPoint;
@@ -169,7 +183,10 @@ class Organization extends Thing
     }
 
 
-    public function withDepartment (?self $department) : self
+    /**
+     * @return static
+     */
+    public function withDepartment (?self $department)
     {
         $clone = clone $this;
         $clone->department = $department;
@@ -177,7 +194,10 @@ class Organization extends Thing
     }
 
 
-    public function withEmail (?string $email) : self
+    /**
+     * @return static
+     */
+    public function withEmail (?string $email)
     {
         $clone = clone $this;
         $clone->email = $email;
@@ -185,7 +205,10 @@ class Organization extends Thing
     }
 
 
-    public function withFaxNumber (?string $faxNumber) : self
+    /**
+     * @return static
+     */
+    public function withFaxNumber (?string $faxNumber)
     {
         $clone = clone $this;
         $clone->faxNumber = $faxNumber;
@@ -193,7 +216,10 @@ class Organization extends Thing
     }
 
 
-    public function withLegalName (?string $legalName) : self
+    /**
+     * @return static
+     */
+    public function withLegalName (?string $legalName)
     {
         $clone = clone $this;
         $clone->legalName = $legalName;
@@ -201,7 +227,10 @@ class Organization extends Thing
     }
 
 
-    public function withLocation (?PostalAddress $location) : self
+    /**
+     * @return static
+     */
+    public function withLocation (?PostalAddress $location)
     {
         $clone = clone $this;
         $clone->location = $location;
@@ -209,7 +238,10 @@ class Organization extends Thing
     }
 
 
-    public function withLogo (?string $logo) : self
+    /**
+     * @return static
+     */
+    public function withLogo (?string $logo)
     {
         $clone = clone $this;
         $clone->logo = $logo;
@@ -217,7 +249,10 @@ class Organization extends Thing
     }
 
 
-    public function withSlogan (?string $slogan) : self
+    /**
+     * @return static
+     */
+    public function withSlogan (?string $slogan)
     {
         $clone = clone $this;
         $clone->slogan = $slogan;
@@ -225,7 +260,10 @@ class Organization extends Thing
     }
 
 
-    public function withTaxID (?string $taxID) : self
+    /**
+     * @return static
+     */
+    public function withTaxID (?string $taxID)
     {
         $clone = clone $this;
         $clone->taxID = $taxID;
@@ -233,7 +271,10 @@ class Organization extends Thing
     }
 
 
-    public function withTelephone (?string $telephone) : self
+    /**
+     * @return static
+     */
+    public function withTelephone (?string $telephone)
     {
         $clone = clone $this;
         $clone->telephone = $telephone;
@@ -241,7 +282,10 @@ class Organization extends Thing
     }
 
 
-    public function withVatID (?string $vatID) : self
+    /**
+     * @return static
+     */
+    public function withVatID (?string $vatID)
     {
         $clone = clone $this;
         $clone->vatID = $vatID;

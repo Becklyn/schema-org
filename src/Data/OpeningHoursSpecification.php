@@ -46,7 +46,10 @@ class OpeningHoursSpecification extends Thing
 
 
     //region Withers
-    public function withCloses (?Time $closes) : self
+    /**
+     * @return static
+     */
+    public function withCloses (?Time $closes)
     {
         $clone = clone $this;
         $clone->closes = $closes;
@@ -54,7 +57,10 @@ class OpeningHoursSpecification extends Thing
     }
 
 
-    public function withDayOfWeek (?DayOfWeek $dayOfWeek) : self
+    /**
+     * @return static
+     */
+    public function withDayOfWeek (?DayOfWeek $dayOfWeek)
     {
         $clone = clone $this;
         $clone->dayOfWeek = $dayOfWeek;
@@ -62,7 +68,10 @@ class OpeningHoursSpecification extends Thing
     }
 
 
-    public function withOpens (?Time $opens) : self
+    /**
+     * @return static
+     */
+    public function withOpens (?Time $opens)
     {
         $clone = clone $this;
         $clone->opens = $opens;
@@ -70,7 +79,10 @@ class OpeningHoursSpecification extends Thing
     }
 
 
-    public function withValidFrom (?\DateTimeImmutable $validFrom) : self
+    /**
+     * @return static
+     */
+    public function withValidFrom (?\DateTimeImmutable $validFrom)
     {
         $clone = clone $this;
         $clone->validFrom = $validFrom;
@@ -78,7 +90,10 @@ class OpeningHoursSpecification extends Thing
     }
 
 
-    public function withValidThrough (?\DateTimeImmutable $validThrough) : self
+    /**
+     * @return static
+     */
+    public function withValidThrough (?\DateTimeImmutable $validThrough)
     {
         $clone = clone $this;
         $clone->validThrough = $validThrough;

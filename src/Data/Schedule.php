@@ -95,7 +95,10 @@ class Schedule extends Thing
 
 
     //region Withers
-    public function withByDay (?string $byDay) : self
+    /**
+     * @return static
+     */
+    public function withByDay (?string $byDay)
     {
         $clone = clone $this;
         $clone->byDay = $byDay;
@@ -103,7 +106,10 @@ class Schedule extends Thing
     }
 
 
-    public function withByMonth (?int $byMonth) : self
+    /**
+     * @return static
+     */
+    public function withByMonth (?int $byMonth)
     {
         $clone = clone $this;
         $clone->byMonth = $byMonth;
@@ -111,7 +117,10 @@ class Schedule extends Thing
     }
 
 
-    public function withByMonthDay (?int $byMonthDay) : self
+    /**
+     * @return static
+     */
+    public function withByMonthDay (?int $byMonthDay)
     {
         $clone = clone $this;
         $clone->byMonthDay = $byMonthDay;
@@ -119,7 +128,10 @@ class Schedule extends Thing
     }
 
 
-    public function withDuration (?Duration $duration) : self
+    /**
+     * @return static
+     */
+    public function withDuration (?Duration $duration)
     {
         $clone = clone $this;
         $clone->duration = $duration;
@@ -127,7 +139,10 @@ class Schedule extends Thing
     }
 
 
-    public function withEndDate (?\DateTimeImmutable $endDate) : self
+    /**
+     * @return static
+     */
+    public function withEndDate (?\DateTimeImmutable $endDate)
     {
         $clone = clone $this;
         $clone->endDate = $endDate;
@@ -135,7 +150,10 @@ class Schedule extends Thing
     }
 
 
-    public function withEndTime (?string $endTime) : self
+    /**
+     * @return static
+     */
+    public function withEndTime (?string $endTime)
     {
         $clone = clone $this;
         $clone->endTime = $endTime;
@@ -143,7 +161,10 @@ class Schedule extends Thing
     }
 
 
-    public function withExpectDate (?\DateTimeImmutable $expectDate) : self
+    /**
+     * @return static
+     */
+    public function withExpectDate (?\DateTimeImmutable $expectDate)
     {
         $clone = clone $this;
         $clone->expectDate = $expectDate;
@@ -151,7 +172,10 @@ class Schedule extends Thing
     }
 
 
-    public function withRepeatCount (?int $repeatCount) : self
+    /**
+     * @return static
+     */
+    public function withRepeatCount (?int $repeatCount)
     {
         $clone = clone $this;
         $clone->repeatCount = $repeatCount;
@@ -159,7 +183,10 @@ class Schedule extends Thing
     }
 
 
-    public function withRepeatFrequency (?Duration $repeatFrequency) : self
+    /**
+     * @return static
+     */
+    public function withRepeatFrequency (?Duration $repeatFrequency)
     {
         $clone = clone $this;
         $clone->repeatFrequency = $repeatFrequency;
@@ -167,7 +194,10 @@ class Schedule extends Thing
     }
 
 
-    public function withSchedulerTimezone (?string $schedulerTimezone) : self
+    /**
+     * @return static
+     */
+    public function withSchedulerTimezone (?string $schedulerTimezone)
     {
         $clone = clone $this;
         $clone->schedulerTimezone = $schedulerTimezone;
@@ -175,7 +205,10 @@ class Schedule extends Thing
     }
 
 
-    public function withStartDate (?\DateTimeImmutable $startDate) : self
+    /**
+     * @return static
+     */
+    public function withStartDate (?\DateTimeImmutable $startDate)
     {
         $clone = clone $this;
         $clone->startDate = $startDate;
@@ -183,7 +216,10 @@ class Schedule extends Thing
     }
 
 
-    public function withStartTime (?string $startTime) : self
+    /**
+     * @return static
+     */
+    public function withStartTime (?string $startTime)
     {
         $clone = clone $this;
         $clone->startTime = $startTime;

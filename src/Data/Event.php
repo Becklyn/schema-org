@@ -109,7 +109,10 @@ class Event extends Thing
 
 
     //region Withers
-    public function withAbout (?SchemaOrgDataInterface $about) : self
+    /**
+     * @return static
+     */
+    public function withAbout (?SchemaOrgDataInterface $about)
     {
         $clone = clone $this;
         $clone->about = $about;
@@ -117,7 +120,10 @@ class Event extends Thing
     }
 
 
-    public function withDoorTime (?\DateTimeImmutable $doorTime) : self
+    /**
+     * @return static
+     */
+    public function withDoorTime (?\DateTimeImmutable $doorTime)
     {
         $clone = clone $this;
         $clone->doorTime = $doorTime;
@@ -125,7 +131,10 @@ class Event extends Thing
     }
 
 
-    public function withDuration (?Duration $duration) : self
+    /**
+     * @return static
+     */
+    public function withDuration (?Duration $duration)
     {
         $clone = clone $this;
         $clone->duration = $duration;
@@ -133,7 +142,10 @@ class Event extends Thing
     }
 
 
-    public function withEndDate (?\DateTimeImmutable $endDate) : self
+    /**
+     * @return static
+     */
+    public function withEndDate (?\DateTimeImmutable $endDate)
     {
         $clone = clone $this;
         $clone->endDate = $endDate;
@@ -141,7 +153,10 @@ class Event extends Thing
     }
 
 
-    public function withEventStatus (?EventStatus $eventStatus) : self
+    /**
+     * @return static
+     */
+    public function withEventStatus (?EventStatus $eventStatus)
     {
         $clone = clone $this;
         $clone->eventStatus = $eventStatus;
@@ -149,7 +164,10 @@ class Event extends Thing
     }
 
 
-    public function withInLanguage (?string $inLanguage) : self
+    /**
+     * @return static
+     */
+    public function withInLanguage (?string $inLanguage)
     {
         $clone = clone $this;
         $clone->inLanguage = $inLanguage;
@@ -157,7 +175,10 @@ class Event extends Thing
     }
 
 
-    public function withIsAccessibleForFree (?bool $isAccessibleForFree) : self
+    /**
+     * @return static
+     */
+    public function withIsAccessibleForFree (?bool $isAccessibleForFree)
     {
         $clone = clone $this;
         $clone->isAccessibleForFree = $isAccessibleForFree;
@@ -165,7 +186,10 @@ class Event extends Thing
     }
 
 
-    public function withLocation (?PostalAddress $location) : self
+    /**
+     * @return static
+     */
+    public function withLocation (?PostalAddress $location)
     {
         $clone = clone $this;
         $clone->location = $location;
@@ -173,7 +197,10 @@ class Event extends Thing
     }
 
 
-    public function withMaximumAttendeeCapacity (?int $maximumAttendeeCapacity) : self
+    /**
+     * @return static
+     */
+    public function withMaximumAttendeeCapacity (?int $maximumAttendeeCapacity)
     {
         $clone = clone $this;
         $clone->maximumAttendeeCapacity = $maximumAttendeeCapacity;
@@ -181,7 +208,10 @@ class Event extends Thing
     }
 
 
-    public function withMaximumPhysicalAttendeeCapacity (?int $maximumPhysicalAttendeeCapacity) : self
+    /**
+     * @return static
+     */
+    public function withMaximumPhysicalAttendeeCapacity (?int $maximumPhysicalAttendeeCapacity)
     {
         $clone = clone $this;
         $clone->maximumPhysicalAttendeeCapacity = $maximumPhysicalAttendeeCapacity;
@@ -189,7 +219,10 @@ class Event extends Thing
     }
 
 
-    public function withMaximumVirtualAttendeeCapacity (?int $maximumVirtualAttendeeCapacity) : self
+    /**
+     * @return static
+     */
+    public function withMaximumVirtualAttendeeCapacity (?int $maximumVirtualAttendeeCapacity)
     {
         $clone = clone $this;
         $clone->maximumVirtualAttendeeCapacity = $maximumVirtualAttendeeCapacity;
@@ -197,7 +230,10 @@ class Event extends Thing
     }
 
 
-    public function withOrganizer (?Organization $organizer) : self
+    /**
+     * @return static
+     */
+    public function withOrganizer (?Organization $organizer)
     {
         $clone = clone $this;
         $clone->organizer = $organizer;
@@ -205,7 +241,10 @@ class Event extends Thing
     }
 
 
-    public function withPreviousStartDate (?\DateTimeImmutable $previousStartDate) : self
+    /**
+     * @return static
+     */
+    public function withPreviousStartDate (?\DateTimeImmutable $previousStartDate)
     {
         $clone = clone $this;
         $clone->previousStartDate = $previousStartDate;
@@ -213,7 +252,10 @@ class Event extends Thing
     }
 
 
-    public function withStartDate (?\DateTimeImmutable $startDate) : self
+    /**
+     * @return static
+     */
+    public function withStartDate (?\DateTimeImmutable $startDate)
     {
         $clone = clone $this;
         $clone->startDate = $startDate;

@@ -25,7 +25,10 @@ class Brand extends Thing
 
 
     //region Withers
-    public function withLogo (?string $logo) : self
+    /**
+     * @return static
+     */
+    public function withLogo (?string $logo)
     {
         $clone = clone $this;
         $clone->logo = $logo;
@@ -33,7 +36,10 @@ class Brand extends Thing
     }
 
 
-    public function withSlogan (?string $slogan) : self
+    /**
+     * @return static
+     */
+    public function withSlogan (?string $slogan)
     {
         $clone = clone $this;
         $clone->slogan = $slogan;

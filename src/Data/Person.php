@@ -123,7 +123,10 @@ class Person extends Thing
 
 
     //region Withers
-    public function withAdditionalName (?string $additionalName) : self
+    /**
+     * @return static
+     */
+    public function withAdditionalName (?string $additionalName)
     {
         $clone = clone $this;
         $clone->additionalName = $additionalName;
@@ -131,7 +134,10 @@ class Person extends Thing
     }
 
 
-    public function withAddress (?PostalAddress $address) : self
+    /**
+     * @return static
+     */
+    public function withAddress (?PostalAddress $address)
     {
         $clone = clone $this;
         $clone->address = $address;
@@ -139,7 +145,10 @@ class Person extends Thing
     }
 
 
-    public function withAffiliation (?Organization $affiliation) : self
+    /**
+     * @return static
+     */
+    public function withAffiliation (?Organization $affiliation)
     {
         $clone = clone $this;
         $clone->affiliation = $affiliation;
@@ -147,7 +156,10 @@ class Person extends Thing
     }
 
 
-    public function withAward (?string $award) : self
+    /**
+     * @return static
+     */
+    public function withAward (?string $award)
     {
         $clone = clone $this;
         $clone->award = $award;
@@ -155,7 +167,10 @@ class Person extends Thing
     }
 
 
-    public function withBirthDate (?\DateTimeImmutable $birthDate) : self
+    /**
+     * @return static
+     */
+    public function withBirthDate (?\DateTimeImmutable $birthDate)
     {
         $clone = clone $this;
         $clone->birthDate = $birthDate;
@@ -163,7 +178,10 @@ class Person extends Thing
     }
 
 
-    public function withBrand (?Brand $brand) : self
+    /**
+     * @return static
+     */
+    public function withBrand (?Brand $brand)
     {
         $clone = clone $this;
         $clone->brand = $brand;
@@ -171,7 +189,10 @@ class Person extends Thing
     }
 
 
-    public function withCallSign (?string $callSign) : self
+    /**
+     * @return static
+     */
+    public function withCallSign (?string $callSign)
     {
         $clone = clone $this;
         $clone->callSign = $callSign;
@@ -179,7 +200,10 @@ class Person extends Thing
     }
 
 
-    public function withDeathDate (?\DateTimeImmutable $deathDate) : self
+    /**
+     * @return static
+     */
+    public function withDeathDate (?\DateTimeImmutable $deathDate)
     {
         $clone = clone $this;
         $clone->deathDate = $deathDate;
@@ -187,7 +211,10 @@ class Person extends Thing
     }
 
 
-    public function withEmail (?string $email) : self
+    /**
+     * @return static
+     */
+    public function withEmail (?string $email)
     {
         $clone = clone $this;
         $clone->email = $email;
@@ -195,7 +222,10 @@ class Person extends Thing
     }
 
 
-    public function withFamilyName (?string $familyName) : self
+    /**
+     * @return static
+     */
+    public function withFamilyName (?string $familyName)
     {
         $clone = clone $this;
         $clone->familyName = $familyName;
@@ -203,7 +233,10 @@ class Person extends Thing
     }
 
 
-    public function withFaxNumber (?string $faxNumber) : self
+    /**
+     * @return static
+     */
+    public function withFaxNumber (?string $faxNumber)
     {
         $clone = clone $this;
         $clone->faxNumber = $faxNumber;
@@ -211,7 +244,10 @@ class Person extends Thing
     }
 
 
-    public function withGender (?string $gender) : self
+    /**
+     * @return static
+     */
+    public function withGender (?string $gender)
     {
         $clone = clone $this;
         $clone->gender = $gender;
@@ -219,7 +255,10 @@ class Person extends Thing
     }
 
 
-    public function withGivenName (?string $givenName) : self
+    /**
+     * @return static
+     */
+    public function withGivenName (?string $givenName)
     {
         $clone = clone $this;
         $clone->givenName = $givenName;
@@ -227,7 +266,10 @@ class Person extends Thing
     }
 
 
-    public function withJobTitle (?string $jobTitle) : self
+    /**
+     * @return static
+     */
+    public function withJobTitle (?string $jobTitle)
     {
         $clone = clone $this;
         $clone->jobTitle = $jobTitle;
@@ -235,7 +277,10 @@ class Person extends Thing
     }
 
 
-    public function withNationality (?Country $nationality) : self
+    /**
+     * @return static
+     */
+    public function withNationality (?Country $nationality)
     {
         $clone = clone $this;
         $clone->nationality = $nationality;
@@ -243,7 +288,10 @@ class Person extends Thing
     }
 
 
-    public function withSpouse (?self $spouse) : self
+    /**
+     * @return static
+     */
+    public function withSpouse (?self $spouse)
     {
         $clone = clone $this;
         $clone->spouse = $spouse;

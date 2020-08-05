@@ -220,7 +220,10 @@ class CreativeWork extends Thing
 
 
     //region Withers
-    public function withAbout (?SchemaOrgDataInterface $about) : self
+    /**
+     * @return static
+     */
+    public function withAbout (?SchemaOrgDataInterface $about)
     {
         $clone = clone $this;
         $clone->about = $about;
@@ -228,7 +231,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withAbstract (?string $abstract) : self
+    /**
+     * @return static
+     */
+    public function withAbstract (?string $abstract)
     {
         $clone = clone $this;
         $clone->abstract = $abstract;
@@ -238,8 +244,10 @@ class CreativeWork extends Thing
 
     /**
      * @param Organization|Person $author
+     *
+     * @return static
      */
-    public function withAuthor ($author) : self
+    public function withAuthor ($author)
     {
         TypeChecker::ensureIsValidValue($author, TypeChecker::OPTIONAL, Organization::class, Person::class);
 
@@ -249,7 +257,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withAward (?string $award) : self
+    /**
+     * @return static
+     */
+    public function withAward (?string $award)
     {
         $clone = clone $this;
         $clone->award = $award;
@@ -259,8 +270,10 @@ class CreativeWork extends Thing
 
     /**
      * @param Organization|Person $creator
+     *
+     * @return static
      */
-    public function withCreator ($creator) : self
+    public function withCreator ($creator)
     {
         TypeChecker::ensureIsValidValue($creator, TypeChecker::OPTIONAL, Organization::class, Person::class);
 
@@ -270,7 +283,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withDateCreated (?\DateTimeImmutable $dateCreated) : self
+    /**
+     * @return static
+     */
+    public function withDateCreated (?\DateTimeImmutable $dateCreated)
     {
         $clone = clone $this;
         $clone->dateCreated = $dateCreated;
@@ -278,7 +294,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withDateModified (?\DateTimeImmutable $dateModified) : self
+    /**
+     * @return static
+     */
+    public function withDateModified (?\DateTimeImmutable $dateModified)
     {
         $clone = clone $this;
         $clone->dateModified = $dateModified;
@@ -286,7 +305,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withDatePublished (?\DateTimeImmutable $datePublished) : self
+    /**
+     * @return static
+     */
+    public function withDatePublished (?\DateTimeImmutable $datePublished)
     {
         $clone = clone $this;
         $clone->datePublished = $datePublished;
@@ -294,7 +316,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withDiscussionsUrl (?string $discussionsUrl) : self
+    /**
+     * @return static
+     */
+    public function withDiscussionsUrl (?string $discussionsUrl)
     {
         $clone = clone $this;
         $clone->discussionsUrl = $discussionsUrl;
@@ -302,7 +327,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withEditor (?Person $editor) : self
+    /**
+     * @return static
+     */
+    public function withEditor (?Person $editor)
     {
         $clone = clone $this;
         $clone->editor = $editor;
@@ -310,7 +338,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withEncodingFormat (?string $encodingFormat) : self
+    /**
+     * @return static
+     */
+    public function withEncodingFormat (?string $encodingFormat)
     {
         $clone = clone $this;
         $clone->encodingFormat = $encodingFormat;
@@ -318,7 +349,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withExpires (?\DateTimeImmutable $expires) : self
+    /**
+     * @return static
+     */
+    public function withExpires (?\DateTimeImmutable $expires)
     {
         $clone = clone $this;
         $clone->expires = $expires;
@@ -326,7 +360,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withGenre (?string $genre) : self
+    /**
+     * @return static
+     */
+    public function withGenre (?string $genre)
     {
         $clone = clone $this;
         $clone->genre = $genre;
@@ -334,7 +371,9 @@ class CreativeWork extends Thing
     }
 
 
-    public function withInLanguage (?string $inLanguage) : self
+    /**
+     * @return static
+     */
     public function withHeadline (?string $headline)
     {
         $clone = clone $this;
@@ -343,6 +382,10 @@ class CreativeWork extends Thing
     }
 
 
+    /**
+     * @return static
+     */
+    public function withInLanguage (?string $inLanguage)
     {
         $clone = clone $this;
         $clone->inLanguage = $inLanguage;
@@ -350,7 +393,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withIsFamilyFriendly (?bool $isFamilyFriendly) : self
+    /**
+     * @return static
+     */
+    public function withIsFamilyFriendly (?bool $isFamilyFriendly)
     {
         $clone = clone $this;
         $clone->isFamilyFriendly = $isFamilyFriendly;
@@ -358,7 +404,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withKeywords (?string $keywords) : self
+    /**
+     * @return static
+     */
+    public function withKeywords (?string $keywords)
     {
         $clone = clone $this;
         $clone->keywords = $keywords;
@@ -366,7 +415,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withLicense (?string $license) : self
+    /**
+     * @return static
+     */
+    public function withLicense (?string $license)
     {
         $clone = clone $this;
         $clone->license = $license;
@@ -374,7 +426,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withMainEntity (?SchemaOrgDataInterface $mainEntity) : self
+    /**
+     * @return static
+     */
+    public function withMainEntity (?SchemaOrgDataInterface $mainEntity)
     {
         $clone = clone $this;
         $clone->mainEntity = $mainEntity;
@@ -384,8 +439,10 @@ class CreativeWork extends Thing
 
     /**
      * @param Organization|Person $maintainer
+     *
+     * @return static
      */
-    public function withMaintainer ($maintainer) : self
+    public function withMaintainer ($maintainer)
     {
         TypeChecker::ensureIsValidValue($maintainer, TypeChecker::OPTIONAL, Organization::class, Person::class);
 
@@ -397,8 +454,10 @@ class CreativeWork extends Thing
 
     /**
      * @param Organization|Person $producer
+     *
+     * @return static
      */
-    public function withProducer ($producer) : self
+    public function withProducer ($producer)
     {
         TypeChecker::ensureIsValidValue($producer, TypeChecker::OPTIONAL, Organization::class, Person::class);
 
@@ -410,8 +469,10 @@ class CreativeWork extends Thing
 
     /**
      * @param Organization|Person $provider
+     *
+     * @return static
      */
-    public function withProvider ($provider) : self
+    public function withProvider ($provider)
     {
         TypeChecker::ensureIsValidValue($provider, TypeChecker::OPTIONAL, Organization::class, Person::class);
 
@@ -423,8 +484,10 @@ class CreativeWork extends Thing
 
     /**
      * @param Organization|Person $publisher
+     *
+     * @return static
      */
-    public function withPublisher ($publisher) : self
+    public function withPublisher ($publisher)
     {
         TypeChecker::ensureIsValidValue($publisher, TypeChecker::OPTIONAL, Organization::class, Person::class);
 
@@ -434,7 +497,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withRecordedAt (?Event $recordedAt) : self
+    /**
+     * @return static
+     */
+    public function withRecordedAt (?Event $recordedAt)
     {
         $clone = clone $this;
         $clone->recordedAt = $recordedAt;
@@ -442,7 +508,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withReleasedEvent (?PublicationEvent $releasedEvent) : self
+    /**
+     * @return static
+     */
+    public function withReleasedEvent (?PublicationEvent $releasedEvent)
     {
         $clone = clone $this;
         $clone->releasedEvent = $releasedEvent;
@@ -450,7 +519,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withSourceOrganization (?Organization $sourceOrganization) : self
+    /**
+     * @return static
+     */
+    public function withSourceOrganization (?Organization $sourceOrganization)
     {
         $clone = clone $this;
         $clone->sourceOrganization = $sourceOrganization;
@@ -458,7 +530,10 @@ class CreativeWork extends Thing
     }
 
 
-    public function withText (?string $text) : self
+    /**
+     * @return static
+     */
+    public function withText (?string $text)
     {
         $clone = clone $this;
         $clone->text = $text;
