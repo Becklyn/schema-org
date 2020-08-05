@@ -135,7 +135,7 @@ class Place extends Thing
 
 
     /**
-     * @param string|float|null $latitude
+     * @param string|float|null $longitude
      *
      * @return static
      */
