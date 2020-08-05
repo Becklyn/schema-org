@@ -4,8 +4,8 @@ services:
         autoconfigure: true
 
     Becklyn\SchemaOrg\:
-        resource: '../src/*'
-        exclude: '../src/{DependencyInjection,SchemaOrgBundle.php}'
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,SchemaOrgBundle.php}'
 
     Becklyn\SchemaOrg\Schema\MetaDataNormalizerRegistry:
         $normalizers: !tagged schema_org.metadata_normalizer
