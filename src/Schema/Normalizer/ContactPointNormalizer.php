@@ -40,6 +40,11 @@ class ContactPointNormalizer implements MetaDataNormalizer
     {
         \assert($entity instanceof ContactPoint);
 
+        if (null === $entity->getContactType())
+        {
+            throw new \InvalidArgumentException("Expected ContactPoint::getContactType() to be set.");
+        }
+
         $normalized = [
             "areaServed" => $entity->getAreaServed(),
             "availableLanguage" => $entity->getAvailableLanguage(),
