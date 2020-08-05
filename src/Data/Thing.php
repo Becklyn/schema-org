@@ -7,6 +7,7 @@ class Thing implements SchemaOrgDataInterface
     //region Fields
     private ?string $alternateName = null;
     private ?string $description = null;
+    private ?string $disambiguatingDescription = null;
     private ?string $identifier = null;
     private ?string $image = null;
     private ?string $name = null;
@@ -25,6 +26,12 @@ class Thing implements SchemaOrgDataInterface
     public function getDescription () : ?string
     {
         return $this->description;
+    }
+
+
+    public function getDisambiguatingDescription () : ?string
+    {
+        return $this->disambiguatingDescription;
     }
 
 
@@ -77,6 +84,14 @@ class Thing implements SchemaOrgDataInterface
 
 
     public function withIdentifier (?string $identifier) : self
+    public function withDisambiguatingDescription (?string $disambiguatingDescription)
+    {
+        $clone = clone $this;
+        $clone->disambiguatingDescription = $disambiguatingDescription;
+        return $clone;
+    }
+
+
     {
         $clone = clone $this;
         $clone->identifier = $identifier;

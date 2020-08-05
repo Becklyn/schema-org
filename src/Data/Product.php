@@ -4,10 +4,14 @@ namespace Becklyn\SchemaOrg\Data;
 
 use Becklyn\SchemaOrg\TypeChecker\TypeChecker;
 
-class Product implements SchemaOrgDataInterface
+class Product extends Thing
 {
     private ?string $audience = null;
     private ?string $award = null;
+    /**
+     * @var Brand|Organization|null
+     */
+    private $brand;
     private ?string $category = null;
     private ?string $color = null;
     /**
@@ -48,6 +52,15 @@ class Product implements SchemaOrgDataInterface
     public function getAward () : ?string
     {
         return $this->award;
+    }
+
+
+    /**
+     * @return Brand|Organization|null
+     */
+    public function getBrand ()
+    {
+        return $this->brand;
     }
 
 
@@ -193,6 +206,16 @@ class Product implements SchemaOrgDataInterface
 
 
     public function withCategory (?string $category) : self
+    public function withBrand ($brand)
+    {
+        TypeChecker::ensureIsValidValue($brand, TypeChecker::OPTIONAL, Brand::class, static::class);
+
+        $clone = clone $this;
+        $clone->brand = $brand;
+        return $clone;
+    }
+
+
     {
         $clone = clone $this;
         $clone->category = $category;

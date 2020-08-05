@@ -26,6 +26,7 @@ class CreativeWork extends Thing
     private ?string $encodingFormat = null;
     private ?\DateTimeImmutable $expires = null;
     private ?string $genre = null;
+    private ?string $headline = null;
     private ?string $inLanguage = null;
     private ?bool $isFamilyFriendly = null;
     private ?string $keywords = null;
@@ -130,6 +131,12 @@ class CreativeWork extends Thing
     public function getGenre () : ?string
     {
         return $this->genre;
+    }
+
+
+    public function getHeadline () : ?string
+    {
+        return $this->headline;
     }
 
 
@@ -328,6 +335,14 @@ class CreativeWork extends Thing
 
 
     public function withInLanguage (?string $inLanguage) : self
+    public function withHeadline (?string $headline)
+    {
+        $clone = clone $this;
+        $clone->headline = $headline;
+        return $clone;
+    }
+
+
     {
         $clone = clone $this;
         $clone->inLanguage = $inLanguage;

@@ -43,6 +43,7 @@ class ThingNormalizer implements MetaDataNormalizer
         $normalized = [
             "alternateName" => $entity->getAlternateName(),
             "description" => $entity->getDescription(),
+            "disambiguatingDescription" => $entity->getDisambiguatingDescription(),
             "identifier" => $entity->getIdentifier(),
             "image" => $entity->getImage(),
             "name" => $entity->getName(),

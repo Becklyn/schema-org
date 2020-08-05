@@ -4,11 +4,10 @@ namespace Becklyn\SchemaOrg\Schema\Normalizer;
 
 use Becklyn\SchemaOrg\Data\Product;
 use Becklyn\SchemaOrg\Data\SchemaOrgDataInterface;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizer;
 use Becklyn\SchemaOrg\Schema\MetaDataNormalizerRegistry;
 use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
-class ProductNormalizer implements MetaDataNormalizer
+class ProductNormalizer extends ThingNormalizer
 {
     use MetaDataNormalizerTrait;
 
@@ -40,9 +39,11 @@ class ProductNormalizer implements MetaDataNormalizer
     {
         \assert($entity instanceof Product);
 
+        $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
             "audience" => $entity->getAudience(),
             "award" => $entity->getAward(),
+            "brand" => $registry->normalize($entity->getBrand(), $usage, $context, true),
             "category" => $entity->getCategory(),
             "color" => $entity->getColor(),
             "height" => $registry->normalize($entity->getHeight(), $usage, $context, true),
@@ -64,6 +65,6 @@ class ProductNormalizer implements MetaDataNormalizer
             "width" => $registry->normalize($entity->getWidth(), $usage, $context, true),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), $normalized, $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
     }
 }
