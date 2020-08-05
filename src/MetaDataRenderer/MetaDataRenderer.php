@@ -2,7 +2,6 @@
 
 namespace Becklyn\SchemaOrg\MetaDataRenderer;
 
-use Becklyn\SchemaOrg\Data\SchemaOrgDataInterface;
 use Becklyn\SchemaOrg\Schema\MetaDataNormalizerRegistry;
 use Becklyn\SchemaOrg\SchemaBuilder\SchemaBuilderRegistry;
 
@@ -22,7 +21,10 @@ class MetaDataRenderer
     }
 
 
-    public function renderMetaDataTag (?SchemaOrgDataInterface $entity, ?string $usage = null, array $context = []) : ?string
+    /**
+     * @param mixed $entity
+     */
+    public function renderMetaDataTag ($entity, ?string $usage = null, array $context = []) : ?string
     {
         if (null === $entity)
         {
