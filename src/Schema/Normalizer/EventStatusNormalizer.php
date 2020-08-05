@@ -3,12 +3,9 @@
 namespace Becklyn\SchemaOrg\Schema\Normalizer;
 
 use Becklyn\SchemaOrg\Data\EventStatus;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class EventStatusNormalizer extends ThingNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "EventStatus";
 
 

@@ -3,12 +3,9 @@
 namespace Becklyn\SchemaOrg\Schema\Normalizer;
 
 use Becklyn\SchemaOrg\Data\DayOfWeek;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class DayOfWeekNormalizer extends ThingNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "DayOfWeek";
 
 

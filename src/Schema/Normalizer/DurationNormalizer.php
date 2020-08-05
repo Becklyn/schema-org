@@ -3,12 +3,9 @@
 namespace Becklyn\SchemaOrg\Schema\Normalizer;
 
 use Becklyn\SchemaOrg\Data\Duration;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class DurationNormalizer extends ThingNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "Duration";
 
 

@@ -5,12 +5,9 @@ namespace Becklyn\SchemaOrg\Schema\Normalizer;
 use Becklyn\SchemaOrg\Data\SchemaOrgDataInterface;
 use Becklyn\SchemaOrg\Data\Time;
 use Becklyn\SchemaOrg\Schema\MetaDataNormalizerRegistry;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class TimeNormalizer extends ThingNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "Time";
 
 

@@ -5,12 +5,9 @@ namespace Becklyn\SchemaOrg\Schema\Normalizer;
 use Becklyn\SchemaOrg\Data\OpeningHoursSpecification;
 use Becklyn\SchemaOrg\Data\SchemaOrgDataInterface;
 use Becklyn\SchemaOrg\Schema\MetaDataNormalizerRegistry;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class OpeningHoursSpecificationNormalizer extends ThingNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "OpeningHoursSpecification";
 
 

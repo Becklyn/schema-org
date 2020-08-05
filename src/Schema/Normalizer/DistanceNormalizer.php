@@ -3,12 +3,9 @@
 namespace Becklyn\SchemaOrg\Schema\Normalizer;
 
 use Becklyn\SchemaOrg\Data\Distance;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class DistanceNormalizer extends ThingNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "Distance";
 
 

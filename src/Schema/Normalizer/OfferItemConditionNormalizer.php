@@ -3,12 +3,9 @@
 namespace Becklyn\SchemaOrg\Schema\Normalizer;
 
 use Becklyn\SchemaOrg\Data\OfferItemCondition;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class OfferItemConditionNormalizer extends ThingNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "OfferItemCondition";
 
 

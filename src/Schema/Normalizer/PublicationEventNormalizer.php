@@ -5,12 +5,9 @@ namespace Becklyn\SchemaOrg\Schema\Normalizer;
 use Becklyn\SchemaOrg\Data\PublicationEvent;
 use Becklyn\SchemaOrg\Data\SchemaOrgDataInterface;
 use Becklyn\SchemaOrg\Schema\MetaDataNormalizerRegistry;
-use Becklyn\SchemaOrg\Schema\MetaDataNormalizerTrait;
 
 class PublicationEventNormalizer extends EventNormalizer
 {
-    use MetaDataNormalizerTrait;
-
     public const SCHEMA_TYPE = "PublicationEvent";
 
 
