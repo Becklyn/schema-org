@@ -27,6 +27,22 @@ trait MetaDataNormalizerTrait
             $normalized["@context"] = "http://schema.org";
         }
 
+        $this->normalizeData($registry, $normalized, $type, $data, $usage, $context, $isNested);
+
+        return $normalized;
+    }
+
+
+    private function normalizeData (
+        MetaDataNormalizerRegistry $registry,
+        array &$normalized,
+        string $type,
+        ?array $data,
+        ?string $usage = null,
+        array $context = [],
+        bool $isNested = false
+    ) : void
+    {
         foreach ($data as $property => $value)
         {
             if (null === $value)
@@ -34,18 +50,18 @@ trait MetaDataNormalizerTrait
                 continue;
             }
 
-            if (\is_object($value))
+            if ($value instanceof \DateTimeInterface)
+            {
+                $normalized[$property] = $this->normalizeDateTime($value);
+            }
+            elseif (\is_object($value))
             {
                 $normalized[$property] = $registry->normalize($value, $usage, $context);
             }
             elseif (\is_array($value))
             {
                 $nestedNormalized = [];
-
-                foreach ($value as $key => $entry)
-                {
-                    $nestedNormalized[$key] = $registry->normalize($entry, $usage, $context);
-                }
+                $this->normalizeData($registry, $nestedNormalized, $type, $value, $usage, $context, $isNested);
 
                 if (!empty($nestedNormalized))
                 {
@@ -57,12 +73,10 @@ trait MetaDataNormalizerTrait
                 $normalized[$property] = $value;
             }
         }
-
-        return $normalized;
     }
 
 
-    protected function normalizeDateTime (?\DateTimeImmutable $date) : ?string
+    protected function normalizeDateTime (?\DateTimeInterface $date) : ?string
     {
         return null !== $date
             ? $date->format("c")
