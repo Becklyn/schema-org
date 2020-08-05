@@ -57,6 +57,6 @@ class OrganizationNormalizer extends ThingNormalizer
             "vatID" => $entity->getVatID(),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);
     }
 }

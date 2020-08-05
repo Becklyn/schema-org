@@ -65,6 +65,6 @@ class ProductNormalizer extends ThingNormalizer
             "width" => $registry->normalize($entity->getWidth(), $usage, $context, true),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);
     }
 }

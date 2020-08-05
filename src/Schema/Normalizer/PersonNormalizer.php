@@ -59,6 +59,6 @@ class PersonNormalizer extends ThingNormalizer
             "spouse" => $registry->normalize($entity->getSpouse(), $usage, $context, true),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);
     }
 }

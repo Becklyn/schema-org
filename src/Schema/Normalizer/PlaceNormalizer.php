@@ -51,6 +51,6 @@ class PlaceNormalizer extends ThingNormalizer
             "telephone" => $entity->getTelephone(),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);
     }
 }

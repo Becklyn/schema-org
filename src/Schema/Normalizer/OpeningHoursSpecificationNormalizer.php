@@ -48,6 +48,6 @@ class OpeningHoursSpecificationNormalizer extends ThingNormalizer
             "validThrough" => $this->normalizeDateTime($entity->getValidThrough()),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);
     }
 }

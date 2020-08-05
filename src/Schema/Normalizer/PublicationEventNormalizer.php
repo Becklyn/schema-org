@@ -44,6 +44,6 @@ class PublicationEventNormalizer extends EventNormalizer
             "publishedBy" => $registry->normalize($entity->getPublishedBy(), $usage, $context, true),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$eventNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($eventNormalized, $normalized), $usage, $context, $isNested);
     }
 }

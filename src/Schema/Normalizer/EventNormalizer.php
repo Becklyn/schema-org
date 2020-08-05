@@ -54,6 +54,6 @@ class EventNormalizer extends ThingNormalizer
             "startDate" => $this->normalizeDateTime($entity->getStartDate()),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);
     }
 }

@@ -47,6 +47,6 @@ class TimeNormalizer extends ThingNormalizer
             "opens" => $registry->normalize($entity->getOpens(), $usage, $context, true),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$thingNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);
     }
 }

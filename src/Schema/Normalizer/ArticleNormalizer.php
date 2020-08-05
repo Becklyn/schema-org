@@ -47,6 +47,6 @@ class ArticleNormalizer extends CreativeWorkNormalizer
             "wordCount" => $entity->getWordCount(),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$creativeWorkNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($creativeWorkNormalized, $normalized), $usage, $context, $isNested);
     }
 }

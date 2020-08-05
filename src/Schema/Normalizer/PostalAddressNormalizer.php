@@ -46,6 +46,6 @@ class PostalAddressNormalizer extends ContactPointNormalizer
             "streetAddress" => $entity->getStreetAddress(),
         ];
 
-        return $this->createMetaData($registry, $this->getSchemaType(), [...$contactPointNormalized, ...$normalized], $usage, $context, $isNested);
+        return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($contactPointNormalized, $normalized), $usage, $context, $isNested);
     }
 }
