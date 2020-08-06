@@ -14,6 +14,12 @@ class PostalAddress extends ContactPoint
     //endregion
 
 
+    public function __construct (string $contactType = "PostalAddress")
+    {
+        parent::__construct($contactType);
+    }
+
+
     //region Accessors
     public function getAddressCountry () : ?string
     {

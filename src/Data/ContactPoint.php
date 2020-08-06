@@ -7,13 +7,19 @@ class ContactPoint implements SchemaOrgDataInterface
     //region Fields
     private ?string $areaServed = null;
     private ?string $availableLanguage = null;
-    private ?string $contactType = null;
+    private ?string $contactType;
     private ?string $email = null;
     private ?string $faxNumber = null;
     private ?OpeningHoursSpecification $hoursAvailable = null;
     private ?string $productSupported = null;
     private ?string $telephone = null;
     //endregion
+
+
+    public function __construct (string $contactType = "Contact")
+    {
+        $this->contactType = $contactType;
+    }
 
 
     //region Accessors
