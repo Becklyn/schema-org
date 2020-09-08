@@ -14,6 +14,11 @@ class Product extends Thing
     private $brand;
     private ?string $category = null;
     private ?string $color = null;
+    private ?string $gtin = null;
+    private ?string $gtin12 = null;
+    private ?string $gtin13 = null;
+    private ?string $gtin14 = null;
+    private ?string $gtin8 = null;
     /**
      * @var QuantitativeValue|Distance|null
      */
@@ -29,6 +34,11 @@ class Product extends Thing
      * @var Product|string|null
      */
     private $material;
+
+    /**
+     * @var Offer|Demand
+     */
+    private $offers;
     private ?string $productID = null;
     private ?\DateTimeImmutable $productionDate = null;
     private ?\DateTimeImmutable $purchaseDate = null;
@@ -73,6 +83,36 @@ class Product extends Thing
     public function getColor () : ?string
     {
         return $this->color;
+    }
+
+
+    public function getGtin () : ?string
+    {
+        return $this->gtin;
+    }
+
+
+    public function getGtin12 () : ?string
+    {
+        return $this->gtin12;
+    }
+
+
+    public function getGtin13 () : ?string
+    {
+        return $this->gtin13;
+    }
+
+
+    public function getGtin14 () : ?string
+    {
+        return $this->gtin14;
+    }
+
+
+    public function getGtin8 () : ?string
+    {
+        return $this->gtin8;
     }
 
 
@@ -133,6 +173,15 @@ class Product extends Thing
     public function getMaterial ()
     {
         return $this->material;
+    }
+
+
+    /**
+     * @return Offer|Demand
+     */
+    public function getOffers ()
+    {
+        return $this->offers;
     }
 
 
@@ -249,6 +298,61 @@ class Product extends Thing
 
 
     /**
+     * @return static
+     */
+    public function withGtin (?string $gtin)
+    {
+        $clone = clone $this;
+        $clone->gtin = $gtin;
+        return $clone;
+    }
+
+
+    /**
+     * @return static
+     */
+    public function withGtin12 (?string $gtin12)
+    {
+        $clone = clone $this;
+        $clone->gtin12 = $gtin12;
+        return $clone;
+    }
+
+
+    /**
+     * @return static
+     */
+    public function withGtin13 (?string $gtin13)
+    {
+        $clone = clone $this;
+        $clone->gtin13 = $gtin13;
+        return $clone;
+    }
+
+
+    /**
+     * @return static
+     */
+    public function withGtin14 (?string $gtin14)
+    {
+        $clone = clone $this;
+        $clone->gtin14 = $gtin14;
+        return $clone;
+    }
+
+
+    /**
+     * @return static
+     */
+    public function withGtin8 (?string $gtin8)
+    {
+        $clone = clone $this;
+        $clone->gtin8 = $gtin8;
+        return $clone;
+    }
+
+
+    /**
      * @param QuantitativeValue|Distance|null $height
      *
      * @return static
@@ -351,6 +455,21 @@ class Product extends Thing
 
         $clone = clone $this;
         $clone->material = $material;
+        return $clone;
+    }
+
+
+    /**
+     * @param Offer|Demand|null $offers
+     *
+     * @return static
+     */
+    public function withOffers ($offers)
+    {
+        TypeChecker::ensureIsValidValue($offers, TypeChecker::OPTIONAL, Offer::class, Demand::class);
+
+        $clone = clone $this;
+        $clone->offers = $offers;
         return $clone;
     }
 
