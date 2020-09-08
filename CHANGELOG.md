@@ -1,3 +1,9 @@
+1.1.1
+=====
+
+*   (bug) Fix `CommentNormalizer` and `OfferNormalizer` not properly handling `null` values for nested object serialization.
+
+
 1.1.0
 =====
 

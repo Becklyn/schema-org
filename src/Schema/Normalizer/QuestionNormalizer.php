@@ -38,9 +38,9 @@ class QuestionNormalizer extends CommentNormalizer
 
         $commentNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "acceptedAnswer" => parent::normalize($registry, $entity->getAcceptedAnswer(), $usage, $context, true),
+            "acceptedAnswer" => $registry->normalize($entity->getAcceptedAnswer(), $usage, $context, true),
             "answerCount" => $entity->getAnswerCount(),
-            "suggestedAnswer" => parent::normalize($registry, $entity->getSuggestedAnswer(), $usage, $context, true),
+            "suggestedAnswer" => $registry->normalize($entity->getSuggestedAnswer(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($commentNormalized, $normalized), $usage, $context, $isNested);

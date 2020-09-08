@@ -39,7 +39,7 @@ class OfferNormalizer extends ThingNormalizer
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
             "acceptedPaymentMethod" => $entity->getAcceptedPaymentMethod(),
-            "addOn" => $this->normalize($registry, $entity->getAddOn(), $usage, $context, true),
+            "addOn" => $registry->normalize($entity->getAddOn(), $usage, $context, true),
             "advanceBookingRequirement" => $registry->normalize($entity->getAdvanceBookingRequirement(), $usage, $context, true),
             "areaServed" => $entity->getAreaServed(),
             "availability" => $entity->getAvailability(),
