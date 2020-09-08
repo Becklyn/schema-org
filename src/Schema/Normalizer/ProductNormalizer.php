@@ -52,6 +52,7 @@ class ProductNormalizer extends ThingNormalizer
             "logo" => $entity->getLogo(),
             "manufacturer" => $registry->normalize($entity->getManufacturer(), $usage, $context, true),
             "material" => $registry->normalize($entity->getMaterial(), $usage, $context, true),
+            "offers" => $registry->normalize($entity->getOffers(), $usage, $context, true),
             "productID" => $entity->getProductID(),
             "productionDate" => $this->normalizeDateTime($entity->getProductionDate()),
             "purchaseDate" => $this->normalizeDateTime($entity->getPurchaseDate()),

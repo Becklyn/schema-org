@@ -33,6 +33,9 @@ trait MetaDataNormalizerTrait
     }
 
 
+    /**
+     * @internal
+     */
     private function normalizeData (
         MetaDataNormalizerRegistry $registry,
         array &$normalized,
