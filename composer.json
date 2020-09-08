@@ -12,10 +12,10 @@
         "php": "^7.4",
         "ext-json": "*",
         "becklyn/rad-bundles": "^1.0",
-        "symfony/config": "^4.4 || ^5.0",
-        "symfony/dependency-injection": "^4.4 || ^5.0",
-        "symfony/http-kernel": "^4.4 || ^5.0",
-        "symfony/phpunit-bridge": "^5.1",
+        "symfony/config": "^4.4 || ^5.1.5",
+        "symfony/dependency-injection": "^4.4 || ^5.1.5",
+        "symfony/http-kernel": "^4.4 || ^5.1.5",
+        "symfony/phpunit-bridge": "^5.1.5",
         "twig/twig": "^2.11 || ^3.0"
     },
     "require-dev": {
