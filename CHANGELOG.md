@@ -1,3 +1,9 @@
+1.1.2
+=====
+
+*   (internal) Require newest Symfony dependency versions for v4.4 and v5.0, to fix for `symfony/http-kernel`'s security issue.
+
+
 1.1.1
 =====
 
