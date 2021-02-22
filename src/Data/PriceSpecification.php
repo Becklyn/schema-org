@@ -2,6 +2,8 @@
 
 namespace Becklyn\SchemaOrg\Data;
 
+use Becklyn\SchemaOrg\TypeChecker\TypeChecker;
+
 class PriceSpecification extends Thing
 {
     //region Fields
@@ -9,7 +11,8 @@ class PriceSpecification extends Thing
     private ?PriceSpecification $eligibleTransactionVolume = null;
     private ?int $maxPrice = null;
     private ?int $minPrice = null;
-    private ?int $price = null;
+    /** @var int|float|string|null */
+    private $price;
     private ?string $priceCurrency = null;
     private ?\DateTimeImmutable $validFrom = null;
     private ?\DateTimeImmutable $validThrough = null;
@@ -42,7 +45,10 @@ class PriceSpecification extends Thing
     }
 
 
-    public function getPrice () : ?int
+    /**
+     * @return int|float|string|null
+     */
+    public function getPrice ()
     {
         return $this->price;
     }
@@ -106,8 +112,15 @@ class PriceSpecification extends Thing
     }
 
 
-    public function withPrice (?int $price)
+    /**
+     * @param int|float|string|null $price
+     *
+     * @return static
+     */
+    public function withPrice ($price)
     {
+        TypeChecker::ensureIsValidValue($price, TypeChecker::OPTIONAL, "int", "float", "string");
+
         $clone = clone $this;
         $clone->price = $price;
         return $clone;

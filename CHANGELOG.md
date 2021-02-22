@@ -1,3 +1,9 @@
+1.1.3
+=====
+
+*   (bug) Allow `PriceSpecification::$price` to accept `int|float|string|null` instead of `int|null`.
+
+
 1.1.2
 =====
 
