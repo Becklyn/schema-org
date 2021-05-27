@@ -1,3 +1,9 @@
+1.4.1
+=====
+
+*   (bug) Add missing normalisation of `LocalBusiness::$geo`. 
+
+
 1.4.0
 =====
 

@@ -39,6 +39,7 @@ class LocalBusinessNormalizer extends OrganizationNormalizer
         $organizationNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
             "currenciesAccepted" => $entity->getCurrenciesAccepted(),
+            "geo" => $registry->normalize($entity->getGeo(), $usage, $context, true),
             "openingHours" => $entity->getOpeningHours(),
             "paymentAccepted" => $entity->getPaymentAccepted(),
             "priceRange" => $entity->getPriceRange(),
