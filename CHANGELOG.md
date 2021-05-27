@@ -1,3 +1,19 @@
+1.2.0
+=====
+
+*   (feature) Added new data types:
+    - `HowTo`
+    - `HowToItem`
+    - `HowToSection`
+    - `HowToStep`
+    - `HowToSupply`
+    - `HowToTool`
+    - `ListItem`
+    - `LocalBusiness`
+    - `MonetaryAmount`
+    - `StructuredValue`
+
+
 1.1.3
 =====
 
