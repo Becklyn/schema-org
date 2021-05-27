@@ -1,3 +1,11 @@
+1.3.0
+=====
+
+*   (feature) Add new data types for geo coordination:
+    - `GeoCoordinate`
+    - `GeoShape`
+
+
 1.2.0
 =====
 
