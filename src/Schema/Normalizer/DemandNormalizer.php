@@ -38,18 +38,18 @@ class DemandNormalizer extends ThingNormalizer
 
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "areaServed" => $entity->getAreaServed(),
+            "areaServed" => $registry->normalize($entity->getAreaServed(), $usage, $context, true),
             "availability" => $entity->getAvailability(),
             "availabilityEnds" => $this->normalizeDateTime($entity->getAvailabilityEnds()),
             "availabilityStarts" => $this->normalizeDateTime($entity->getAvailabilityStarts()),
             "availableAtOrFrom" => $registry->normalize($entity->getAvailableAtOrFrom(), $usage, $context, true),
             "businessFunction" => $entity->getBusinessFunction(),
-            "eligibleRegion" => $entity->getEligibleRegion(),
+            "eligibleRegion" => $registry->normalize($entity->getEligibleRegion(), $usage, $context, true),
             "gtin" => $entity->getGtin(),
             "gtin12" => $entity->getGtin12(),
             "gtin14" => $entity->getGtin14(),
             "gtin8" => $entity->getGtin8(),
-            "ineligibleRegion" => $entity->getIneligibleRegion(),
+            "ineligibleRegion" => $registry->normalize($entity->getIneligibleRegion(), $usage, $context, true),
             "inventoryLevel" => $registry->normalize($entity->getInventoryLevel(), $usage, $context, true),
             "itemCondition" => $registry->normalize($entity->getItemCondition(), $usage, $context, true),
             "priceSpecification" => $registry->normalize($entity->getPriceSpecification(), $usage, $context, true),

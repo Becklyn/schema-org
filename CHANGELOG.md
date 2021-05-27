@@ -4,6 +4,13 @@
 *   (feature) Add new data types for geo coordination:
     - `GeoCoordinate`
     - `GeoShape`
+*   (feature) Added new `GeoCoordinates` relations to the following existing types:
+    - `LocalBusiness::$geo`
+*   (feature) Added new `GeoShape` relations to the following existing types:
+    - `ContactPoint::$areaServed`
+    - `Demand::$areaServed`, `::$eligibleRegion`, `::$ineligibleRegion`
+    - `Offer::$areaServed`, `::$eligibleRegion`, `::$ineligibleRegion`
+    - `Organization::$areaServed`
 
 
 1.2.0

@@ -8,7 +8,8 @@ class Organization extends Thing
 {
     //region Fields
     private ?PostalAddress $address = null;
-    private ?string $areaServed = null;
+    /** @var string|GeoShape */
+    private $areaServed;
     private ?string $award = null;
     /**
      * @var Brand|Organization|null
@@ -35,7 +36,10 @@ class Organization extends Thing
     }
 
 
-    public function getAreaServed () : ?string
+    /**
+     * @return GeoShape|string
+     */
+    public function getAreaServed ()
     {
         return $this->areaServed;
     }
@@ -136,12 +140,17 @@ class Organization extends Thing
 
 
     /**
+     * @param string|GeoShape $areaServed
+     *
      * @return static
      */
-    public function withAreaServed (?string $areaServed)
+    public function withAreaServed ($areaServed)
     {
+        TypeChecker::ensureIsValidValue($areaServed, TypeChecker::OPTIONAL, "string", GeoShape::class);
+
         $clone = clone $this;
         $clone->areaServed = $areaServed;
+
         return $clone;
     }
 

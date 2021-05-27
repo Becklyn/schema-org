@@ -46,7 +46,7 @@ class ContactPointNormalizer implements MetaDataNormalizer
         }
 
         $normalized = [
-            "areaServed" => $entity->getAreaServed(),
+            "areaServed" => $registry->normalize($entity->getAreaServed(), $usage, $context, true),
             "availableLanguage" => $entity->getAvailableLanguage(),
             "email" => $entity->getEmail(),
             "faxNumber" => $entity->getFaxNumber(),

@@ -8,6 +8,8 @@ class Place extends Thing
 {
     //region Fields
     private ?PostalAddress $address = null;
+    /** @var GeoCoordinates|GeoShape|null */
+    private $geo;
     /**
      * @var string|float|null
      */
@@ -31,6 +33,15 @@ class Place extends Thing
     public function getAddress () : ?PostalAddress
     {
         return $this->address;
+    }
+
+
+    /**
+     * @return GeoCoordinates|GeoShape|null
+     */
+    public function getGeo ()
+    {
+        return $this->geo;
     }
 
 
@@ -103,6 +114,20 @@ class Place extends Thing
     {
         $clone = clone $this;
         $clone->address = $address;
+        return $clone;
+    }
+
+
+    /**
+     * @param GeoCoordinates|GeoShape $geo
+     *
+     * @return static
+     */
+    public function withGeo ($geo)
+    {
+        $clone = clone $this;
+        $clone->geo = $geo;
+
         return $clone;
     }
 

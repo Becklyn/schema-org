@@ -2,10 +2,13 @@
 
 namespace Becklyn\SchemaOrg\Data;
 
+use Becklyn\SchemaOrg\TypeChecker\TypeChecker;
+
 class ContactPoint implements SchemaOrgDataInterface
 {
     //region Fields
-    private ?string $areaServed = null;
+    /** @var string|GeoShape */
+    private $areaServed;
     private ?string $availableLanguage = null;
     private ?string $contactType;
     private ?string $email = null;
@@ -23,7 +26,10 @@ class ContactPoint implements SchemaOrgDataInterface
 
 
     //region Accessors
-    public function getAreaServed () : ?string
+    /**
+     * @return GeoShape|string
+     */
+    public function getAreaServed ()
     {
         return $this->areaServed;
     }
@@ -74,12 +80,17 @@ class ContactPoint implements SchemaOrgDataInterface
 
     //region Withers
     /**
+     * @param string|GeoShape $areaServed
+     *
      * @return static
      */
-    public function withAreaServed (?string $areaServed)
+    public function withAreaServed ($areaServed)
     {
+        TypeChecker::ensureIsValidValue($areaServed, TypeChecker::OPTIONAL, "string", GeoShape::class);
+
         $clone = clone $this;
         $clone->areaServed = $areaServed;
+
         return $clone;
     }
 

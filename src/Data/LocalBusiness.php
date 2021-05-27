@@ -6,6 +6,8 @@ class LocalBusiness extends Organization
 {
     //region Fields
     private ?string $currenciesAccepted = null;
+    /** @var GeoCoordinates|GeoShape|null */
+    private $geo;
     private ?string $openingHours = null;
     private ?string $paymentAccepted = null;
     private ?string $priceRange = null;
@@ -17,6 +19,16 @@ class LocalBusiness extends Organization
     {
         return $this->currenciesAccepted;
     }
+
+
+    /**
+     * @return GeoCoordinates|GeoShape|null
+     */
+    public function getGeo ()
+    {
+        return $this->geo;
+    }
+
 
 
     public function getOpeningHours () : ?string
@@ -46,6 +58,20 @@ class LocalBusiness extends Organization
     {
         $clone = clone $this;
         $clone->currenciesAccepted = $currenciesAccepted;
+
+        return $clone;
+    }
+
+
+    /**
+     * @param GeoCoordinates|GeoShape $geo
+     *
+     * @return static
+     */
+    public function withGeo ($geo)
+    {
+        $clone = clone $this;
+        $clone->geo = $geo;
 
         return $clone;
     }

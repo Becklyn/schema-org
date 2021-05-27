@@ -10,7 +10,8 @@ class Offer extends Intangible
     private ?string $acceptedPaymentMethod = null;
     private ?Offer $addOn = null;
     private ?QuantitativeValue $advanceBookingRequirement = null;
-    private ?string $areaServed = null;
+    /** @var string|GeoShape */
+    private $areaServed;
     private ?string $availability = null;
     private ?\DateTimeImmutable $availabilityEnds = null;
     private ?\DateTimeImmutable $availabilityStarts = null;
@@ -19,14 +20,16 @@ class Offer extends Intangible
     private ?string $category = null;
     private ?QuantitativeValue $deliveryLeadTime = null;
     private ?QuantitativeValue $eligibleQuantity = null;
-    private ?string $eligibleRegion = null;
+    /** @var string|GeoShape */
+    private $eligibleRegion;
     private ?PriceSpecification $eligibleTransactionVolume = null;
     private ?string $gtin = null;
     private ?string $gtin12 = null;
     private ?string $gtin13 = null;
     private ?string $gtin14 = null;
     private ?string $gtin8 = null;
-    private ?string $ineligibleRegion = null;
+    /** @var string|GeoShape */
+    private $ineligibleRegion;
     private ?QuantitativeValue $inventoryLevel = null;
     private ?OfferItemCondition $itemCondition = null;
     private ?PriceSpecification $priceSpecification = null;
@@ -60,7 +63,10 @@ class Offer extends Intangible
     }
 
 
-    public function getAreaServed () : ?string
+    /**
+     * @return GeoShape|string
+     */
+    public function getAreaServed ()
     {
         return $this->areaServed;
     }
@@ -114,7 +120,10 @@ class Offer extends Intangible
     }
 
 
-    public function getEligibleRegion () : ?string
+    /**
+     * @return GeoShape|string
+     */
+    public function getEligibleRegion ()
     {
         return $this->eligibleRegion;
     }
@@ -156,7 +165,10 @@ class Offer extends Intangible
     }
 
 
-    public function getIneligibleRegion () : ?string
+    /**
+     * @return GeoShape|string
+     */
+    public function getIneligibleRegion ()
     {
         return $this->ineligibleRegion;
     }
@@ -249,12 +261,17 @@ class Offer extends Intangible
 
 
     /**
+     * @param string|GeoShape $areaServed
+     *
      * @return static
      */
-    public function withAreaServed (?string $areaServed)
+    public function withAreaServed ($areaServed)
     {
+        TypeChecker::ensureIsValidValue($areaServed, TypeChecker::OPTIONAL, "string", GeoShape::class);
+
         $clone = clone $this;
         $clone->areaServed = $areaServed;
+
         return $clone;
     }
 
@@ -348,12 +365,17 @@ class Offer extends Intangible
 
 
     /**
+     * @param string|GeoShape $eligibleRegion
+     *
      * @return static
      */
-    public function withEligibleRegion (?string $eligibleRegion)
+    public function withEligibleRegion ($eligibleRegion)
     {
+        TypeChecker::ensureIsValidValue($eligibleRegion, TypeChecker::OPTIONAL, "string", GeoShape::class);
+
         $clone = clone $this;
         $clone->eligibleRegion = $eligibleRegion;
+
         return $clone;
     }
 
@@ -425,12 +447,17 @@ class Offer extends Intangible
 
 
     /**
+     * @param string|GeoShape|null $ineligibleRegion
+     *
      * @return static
      */
-    public function withIneligibleRegion (?string $ineligibleRegion)
+    public function withIneligibleRegion ($ineligibleRegion)
     {
+        TypeChecker::ensureIsValidValue($ineligibleRegion, TypeChecker::OPTIONAL, "string", GeoShape::class);
+
         $clone = clone $this;
         $clone->ineligibleRegion = $ineligibleRegion;
+
         return $clone;
     }
 
