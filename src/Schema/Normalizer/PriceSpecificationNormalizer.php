@@ -38,8 +38,8 @@ class PriceSpecificationNormalizer extends ThingNormalizer
 
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "eligibleQuantity" => $registry->normalize($entity->getEligibleQuantity(), $usage, $context, true),
-            "eligibleTransactionVolume" => $registry->normalize($entity->getEligibleTransactionVolume(), $usage, $context, true),
+            "eligibleQuantity" => $this->normalizeDataOrPrimitive($registry, $entity->getEligibleQuantity(), $usage, $context, true),
+            "eligibleTransactionVolume" => $this->normalizeDataOrPrimitive($registry, $entity->getEligibleTransactionVolume(), $usage, $context, true),
             "maxPrice" => $entity->getMaxPrice(),
             "minPrice" => $entity->getMinPrice(),
             "price" => $entity->getPrice(),

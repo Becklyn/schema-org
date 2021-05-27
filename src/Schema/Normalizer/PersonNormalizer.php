@@ -39,11 +39,11 @@ class PersonNormalizer extends ThingNormalizer
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
             "additionalName" => $entity->getAdditionalName(),
-            "address" => $registry->normalize($entity->getAddress(), $usage, $context, true),
-            "affiliation" => $registry->normalize($entity->getAffiliation(), $usage, $context, true),
+            "address" => $this->normalizeDataOrPrimitive($registry, $entity->getAddress(), $usage, $context, true),
+            "affiliation" => $this->normalizeDataOrPrimitive($registry, $entity->getAffiliation(), $usage, $context, true),
             "award" => $entity->getAward(),
             "birthDate" => $this->normalizeDateTime($entity->getBirthDate()),
-            "brand" => $registry->normalize($entity->getBrand(), $usage, $context, true),
+            "brand" => $this->normalizeDataOrPrimitive($registry, $entity->getBrand(), $usage, $context, true),
             "callSign" => $entity->getCallSign(),
             "deathDate" => $this->normalizeDateTime($entity->getDeathDate()),
             "email" => $entity->getEmail(),
@@ -53,7 +53,7 @@ class PersonNormalizer extends ThingNormalizer
             "givenName" => $entity->getGivenName(),
             "jobTitle" => $entity->getJobTitle(),
             "nationality" => $entity->getNationality(),
-            "spouse" => $registry->normalize($entity->getSpouse(), $usage, $context, true),
+            "spouse" => $this->normalizeDataOrPrimitive($registry, $entity->getSpouse(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);

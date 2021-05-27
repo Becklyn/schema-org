@@ -38,14 +38,14 @@ class HowToNormalizer extends CreativeWorkNormalizer
 
         $creativeWorkNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "estimatedCost" => $registry->normalize($entity->getEstimatedCost(), $usage, $context, true),
-            "performTime" => $registry->normalize($entity->getPerformTime(), $usage, $context, true),
-            "prepTime" => $registry->normalize($entity->getPrepTime(), $usage, $context, true),
-            "step" => $registry->normalize($entity->getStep(), $usage, $context, true),
-            "supply" => $registry->normalize($entity->getSupply(), $usage, $context, true),
-            "tool" => $registry->normalize($entity->getTool(), $usage, $context, true),
-            "totalTime" => $registry->normalize($entity->getTotalTime(), $usage, $context, true),
-            "yield" => $registry->normalize($entity->getYield(), $usage, $context, true),
+            "estimatedCost" => $this->normalizeDataOrPrimitive($registry, $entity->getEstimatedCost(), $usage, $context, true),
+            "performTime" => $this->normalizeDataOrPrimitive($registry, $entity->getPerformTime(), $usage, $context, true),
+            "prepTime" => $this->normalizeDataOrPrimitive($registry, $entity->getPrepTime(), $usage, $context, true),
+            "step" => $this->normalizeDataOrPrimitive($registry, $entity->getStep(), $usage, $context, true),
+            "supply" => $this->normalizeDataOrPrimitive($registry, $entity->getSupply(), $usage, $context, true),
+            "tool" => $this->normalizeDataOrPrimitive($registry, $entity->getTool(), $usage, $context, true),
+            "totalTime" => $this->normalizeDataOrPrimitive($registry, $entity->getTotalTime(), $usage, $context, true),
+            "yield" => $this->normalizeDataOrPrimitive($registry, $entity->getYield(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($creativeWorkNormalized, $normalized), $usage, $context, $isNested);

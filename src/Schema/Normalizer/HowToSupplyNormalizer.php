@@ -38,7 +38,7 @@ class HowToSupplyNormalizer extends HowToItemNormalizer
 
         $howToItemNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "estimatedCost" => $registry->normalize($entity->getEstimatedCost(), $usage, $context, true),
+            "estimatedCost" => $this->normalizeDataOrPrimitive($registry, $entity->getEstimatedCost(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($howToItemNormalized, $normalized), $usage, $context, $isNested);

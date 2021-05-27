@@ -38,7 +38,7 @@ class HowToItemNormalizer extends ListItemNormalizer
 
         $listItemNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "requiredQuantity" => $registry->normalize($entity->getRequiredQuantity(), $usage, $context, true),
+            "requiredQuantity" => $this->normalizeDataOrPrimitive($registry, $entity->getRequiredQuantity(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($listItemNormalized, $normalized), $usage, $context, $isNested);

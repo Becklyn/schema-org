@@ -39,7 +39,7 @@ class CommentNormalizer extends CreativeWorkNormalizer
         $creativeWorkNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
             "downvoteCount" => $entity->getDownvoteCount(),
-            "parentItem" => $registry->normalize($entity->getParentItem(), $usage, $context, true),
+            "parentItem" => $this->normalizeDataOrPrimitive($registry, $entity->getParentItem(), $usage, $context, true),
             "upvoteCount" => $entity->getUpvoteCount(),
         ];
 

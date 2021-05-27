@@ -2,6 +2,8 @@
 
 namespace Becklyn\SchemaOrg\Schema;
 
+use Becklyn\SchemaOrg\Data\SchemaOrgDataInterface;
+
 trait MetaDataNormalizerTrait
 {
     protected function createMetaData (
@@ -34,13 +36,39 @@ trait MetaDataNormalizerTrait
 
 
     /**
+     * This function correctly handles normalization of properties that may or may not contain a nested SchemaOrgDataInterface entity or primitives.
+     *
+     * @param SchemaOrgDataInterface|mixed|null $entityOrPrimitive
+     *
+     * @return array|string|null
+     */
+    protected function normalizeDataOrPrimitive (
+        MetaDataNormalizerRegistry $registry,
+        $entityOrPrimitive,
+        ?string $usage = null,
+        array $context = [],
+        bool $isNested = false
+    )
+    {
+        $normalized = [];
+        $data = [
+            "dataOrPrimitive" => $entityOrPrimitive,
+        ];
+
+        $this->normalizeData($registry, $normalized, "__schemaOrgDataInterfaceOrPrimitive__", $data, $usage, $context, $isNested);
+
+        return $normalized["dataOrPrimitive"] ?? null;
+    }
+
+
+    /**
      * @internal
      */
     private function normalizeData (
         MetaDataNormalizerRegistry $registry,
         array &$normalized,
         string $type,
-        ?array $data,
+        array $data,
         ?string $usage = null,
         array $context = [],
         bool $isNested = false
@@ -59,7 +87,7 @@ trait MetaDataNormalizerTrait
             }
             elseif (\is_object($value))
             {
-                $normalized[$property] = $registry->normalize($value, $usage, $context);
+                $normalized[$property] = $registry->normalize($value, $usage, $context, $isNested);
             }
             elseif (\is_array($value))
             {

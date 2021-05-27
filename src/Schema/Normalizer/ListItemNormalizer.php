@@ -38,10 +38,10 @@ class ListItemNormalizer extends IntangibleNormalizer
 
         $intangibleNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "item" => $registry->normalize($entity->getItem(), $usage, $context, true),
-            "nextItem" => $registry->normalize($entity->getNextItem(), $usage, $context, true),
+            "item" => $this->normalizeDataOrPrimitive($registry, $entity->getItem(), $usage, $context, true),
+            "nextItem" => $this->normalizeDataOrPrimitive($registry, $entity->getNextItem(), $usage, $context, true),
             "position" => $entity->getPosition(),
-            "previousItem" => $registry->normalize($entity->getPreviousItem(), $usage, $context, true),
+            "previousItem" => $this->normalizeDataOrPrimitive($registry, $entity->getPreviousItem(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($intangibleNormalized, $normalized), $usage, $context, $isNested);

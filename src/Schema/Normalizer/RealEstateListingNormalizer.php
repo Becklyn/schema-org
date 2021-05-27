@@ -39,7 +39,7 @@ class RealEstateListingNormalizer extends WebPageNormalizer
         $webPageNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
             "datePosted" => $entity->getDatePosted(),
-            "duration" => $registry->normalize($entity->getDuration(), $usage, $context, true),
+            "duration" => $this->normalizeDataOrPrimitive($registry, $entity->getDuration(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($webPageNormalized, $normalized), $usage, $context, $isNested);

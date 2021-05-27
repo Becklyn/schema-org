@@ -46,11 +46,11 @@ class ContactPointNormalizer implements MetaDataNormalizer
         }
 
         $normalized = [
-            "areaServed" => $registry->normalize($entity->getAreaServed(), $usage, $context, true),
+            "areaServed" => $this->normalizeDataOrPrimitive($registry, $entity->getAreaServed(), $usage, $context, true),
             "availableLanguage" => $entity->getAvailableLanguage(),
             "email" => $entity->getEmail(),
             "faxNumber" => $entity->getFaxNumber(),
-            "hoursAvailable" => $registry->normalize($entity->getHoursAvailable(), $usage, $context, true),
+            "hoursAvailable" => $this->normalizeDataOrPrimitive($registry, $entity->getHoursAvailable(), $usage, $context, true),
             "productSupported" => $entity->getProductSupported(),
             "telephone" => $entity->getTelephone(),
         ];

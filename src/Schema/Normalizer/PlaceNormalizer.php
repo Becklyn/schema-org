@@ -38,16 +38,16 @@ class PlaceNormalizer extends ThingNormalizer
 
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "address" => $registry->normalize($entity->getAddress(), $usage, $context, true),
+            "address" => $this->normalizeDataOrPrimitive($registry, $entity->getAddress(), $usage, $context, true),
             "latitude" => $entity->getLatitude(),
             "logo" => $entity->getLogo(),
             "longitude" => $entity->getLongitude(),
             "maximumAttendeeCapacity" => $entity->getMaximumAttendeeCapacity(),
-            "openingHoursSpecification" => $registry->normalize($entity->getOpeningHoursSpecification(), $usage, $context, true),
+            "openingHoursSpecification" => $this->normalizeDataOrPrimitive($registry, $entity->getOpeningHoursSpecification(), $usage, $context, true),
             "publicAccess" => $entity->getPublicAccess(),
             "slogan" => $entity->getSlogan(),
             "smokingAllowed" => $entity->getSmokingAllowed(),
-            "specialOpeningHoursSpecification" => $registry->normalize($entity->getSpecialOpeningHoursSpecification(), $usage, $context, true),
+            "specialOpeningHoursSpecification" => $this->normalizeDataOrPrimitive($registry, $entity->getSpecialOpeningHoursSpecification(), $usage, $context, true),
             "telephone" => $entity->getTelephone(),
         ];
 

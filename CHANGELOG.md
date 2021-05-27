@@ -1,3 +1,11 @@
+1.5.0
+=====
+
+*   (feature) Added `MetaDataNormalizerTrait::normalizeDataOrPrimitive()`, which should be used inside a `MetaDataNormalizer` instead of nesting calls to the 
+    `MetaDataNormalizerRegistry::normalize()` itself for cases where a certain property is either a primitive or an `SchemaOrgDataInterface` entity.
+*   (internal) Updated all built-in `MetaDataNormalizer` to call `MetaDataNormalizerTrait::normalizeDataOrPrimitive()` instead of `MetaDataNormalizerRegistry::normalize()`. 
+
+
 1.4.1
 =====
 

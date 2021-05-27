@@ -39,7 +39,7 @@ class OpeningHoursSpecificationNormalizer extends ThingNormalizer
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
             "closes" => $entity->getCloses(),
-            "dayOfWeek" => $registry->normalize($entity->getDayOfWeek(), $usage, $context, true),
+            "dayOfWeek" => $this->normalizeDataOrPrimitive($registry, $entity->getDayOfWeek(), $usage, $context, true),
             "opens" => $entity->getOpens(),
             "validFrom" => $this->normalizeDateTime($entity->getValidFrom()),
             "validThrough" => $this->normalizeDateTime($entity->getValidThrough()),

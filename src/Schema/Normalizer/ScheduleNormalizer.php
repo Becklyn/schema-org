@@ -41,7 +41,7 @@ class ScheduleNormalizer extends ThingNormalizer
             "byDay" => $entity->getByDay(),
             "byMonth" => $entity->getByMonth(),
             "byMonthDay" => $entity->getByMonthDay(),
-            "duration" => $registry->normalize($entity->getDuration(), $usage, $context, true),
+            "duration" => $this->normalizeDataOrPrimitive($registry, $entity->getDuration(), $usage, $context, true),
             "endDate" => $this->normalizeDateTime($entity->getEndDate()),
             "endTime" => $entity->getEndTime(),
             "expectDate" => $this->normalizeDateTime($entity->getExpectDate()),

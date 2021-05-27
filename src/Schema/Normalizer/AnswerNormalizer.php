@@ -38,7 +38,7 @@ class AnswerNormalizer extends CommentNormalizer
 
         $commentNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "answerExplanation" => $registry->normalize($entity->getAnswerExplanation(), $usage, $context, true),
+            "answerExplanation" => $this->normalizeDataOrPrimitive($registry, $entity->getAnswerExplanation(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($commentNormalized, $normalized), $usage, $context, $isNested);

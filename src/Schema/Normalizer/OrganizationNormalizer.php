@@ -38,15 +38,15 @@ class OrganizationNormalizer extends ThingNormalizer
 
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "address" => $registry->normalize($entity->getAddress(), $usage, $context, true),
+            "address" => $this->normalizeDataOrPrimitive($registry, $entity->getAddress(), $usage, $context, true),
             "areaServed" => $entity->getAreaServed(),
             "award" => $entity->getAward(),
-            "brand" => $registry->normalize($entity->getBrand(), $usage, $context, true),
-            "contactPoint" => $registry->normalize($entity->getContactPoint(), $usage, $context, true),
-            "department" => $registry->normalize($entity->getDepartment(), $usage, $context, true),
+            "brand" => $this->normalizeDataOrPrimitive($registry, $entity->getBrand(), $usage, $context, true),
+            "contactPoint" => $this->normalizeDataOrPrimitive($registry, $entity->getContactPoint(), $usage, $context, true),
+            "department" => $this->normalizeDataOrPrimitive($registry, $entity->getDepartment(), $usage, $context, true),
             "email" => $entity->getEmail(),
             "faxNumber" => $entity->getFaxNumber(),
-            "location" => $registry->normalize($entity->getLocation(), $usage, $context, true),
+            "location" => $this->normalizeDataOrPrimitive($registry, $entity->getLocation(), $usage, $context, true),
             "logo" => $entity->getLogo(),
             "slogan" => $entity->getSlogan(),
             "taxID" => $entity->getTaxID(),

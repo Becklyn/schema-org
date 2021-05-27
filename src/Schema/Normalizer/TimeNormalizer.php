@@ -38,10 +38,10 @@ class TimeNormalizer extends ThingNormalizer
 
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "closes" => $registry->normalize($entity->getCloses(), $usage, $context, true),
-            "endTime" => $registry->normalize($entity->getEndTime(), $usage, $context, true),
-            "startTime" => $registry->normalize($entity->getStartTime(), $usage, $context, true),
-            "opens" => $registry->normalize($entity->getOpens(), $usage, $context, true),
+            "closes" => $this->normalizeDataOrPrimitive($registry, $entity->getCloses(), $usage, $context, true),
+            "endTime" => $this->normalizeDataOrPrimitive($registry, $entity->getEndTime(), $usage, $context, true),
+            "startTime" => $this->normalizeDataOrPrimitive($registry, $entity->getStartTime(), $usage, $context, true),
+            "opens" => $this->normalizeDataOrPrimitive($registry, $entity->getOpens(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($thingNormalized, $normalized), $usage, $context, $isNested);

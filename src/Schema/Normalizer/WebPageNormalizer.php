@@ -40,7 +40,7 @@ class WebPageNormalizer extends CreativeWorkNormalizer
         $normalized = [
             "breadcrumb" => $entity->getBreadcrumb(),
             "lastReviewed" => $this->normalizeDateTime($entity->getLastReviewed()),
-            "mainContentOfPage" => $registry->normalize($entity->getMainContentOfPage(), $usage, $context, true),
+            "mainContentOfPage" => $this->normalizeDataOrPrimitive($registry, $entity->getMainContentOfPage(), $usage, $context, true),
             "relatedLink" => $entity->getRelatedLink(),
             "significantLink" => $entity->getSignificantLink(),
             "speakable" => $entity->getSpeakable(),

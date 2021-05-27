@@ -38,18 +38,18 @@ class EventNormalizer extends ThingNormalizer
 
         $thingNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "about" => $registry->normalize($entity->getAbout(), $usage, $context, true),
+            "about" => $this->normalizeDataOrPrimitive($registry, $entity->getAbout(), $usage, $context, true),
             "doorTime" => $this->normalizeDateTime($entity->getDoorTime()),
-            "duration" => $registry->normalize($entity->getDuration(), $usage, $context, true),
+            "duration" => $this->normalizeDataOrPrimitive($registry, $entity->getDuration(), $usage, $context, true),
             "endDate" => $this->normalizeDateTime($entity->getEndDate()),
-            "eventStatus" => $registry->normalize($entity->getEventStatus(), $usage, $context, true),
+            "eventStatus" => $this->normalizeDataOrPrimitive($registry, $entity->getEventStatus(), $usage, $context, true),
             "inLanguage" => $entity->getInLanguage(),
             "isAccessibleForFree" => $entity->getIsAccessibleForFree(),
-            "location" => $registry->normalize($entity->getLocation(), $usage, $context, true),
+            "location" => $this->normalizeDataOrPrimitive($registry, $entity->getLocation(), $usage, $context, true),
             "maximumAttendeeCapacity" => $entity->getMaximumAttendeeCapacity(),
             "maximumPhysicalAttendeeCapacity" => $entity->getMaximumPhysicalAttendeeCapacity(),
             "maximumVirtualAttendeeCapacity" => $entity->getMaximumVirtualAttendeeCapacity(),
-            "organizer" => $registry->normalize($entity->getOrganizer(), $usage, $context, true),
+            "organizer" => $this->normalizeDataOrPrimitive($registry, $entity->getOrganizer(), $usage, $context, true),
             "previousStartDate" => $this->normalizeDateTime($entity->getPreviousStartDate()),
             "startDate" => $this->normalizeDateTime($entity->getStartDate()),
         ];

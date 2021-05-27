@@ -38,8 +38,8 @@ class GeoShapeNormalizer extends StructuredValueNormalizer
 
         $structuredValueNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "address" => $registry->normalize($entity->getAddress(), $usage, $context, true),
-            "addressCountry" => $registry->normalize($entity->getAddressCountry(), $usage, $context, true),
+            "address" => $this->normalizeDataOrPrimitive($registry, $entity->getAddress(), $usage, $context, true),
+            "addressCountry" => $this->normalizeDataOrPrimitive($registry, $entity->getAddressCountry(), $usage, $context, true),
             "box" => $entity->getBox(),
             "circle" => $entity->getCircle(),
             "elevation" => $entity->getElevation(),

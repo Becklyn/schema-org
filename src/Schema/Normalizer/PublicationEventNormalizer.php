@@ -38,7 +38,7 @@ class PublicationEventNormalizer extends EventNormalizer
 
         $eventNormalized = parent::normalize($registry, $entity, $usage, $context, true);
         $normalized = [
-            "publishedBy" => $registry->normalize($entity->getPublishedBy(), $usage, $context, true),
+            "publishedBy" => $this->normalizeDataOrPrimitive($registry, $entity->getPublishedBy(), $usage, $context, true),
         ];
 
         return $this->createMetaData($registry, $this->getSchemaType(), \array_replace($eventNormalized, $normalized), $usage, $context, $isNested);
