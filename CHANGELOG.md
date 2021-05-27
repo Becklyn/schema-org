@@ -1,3 +1,9 @@
+1.4.0
+=====
+
+*   (feature) Add new data type: `AnimalShelter`
+
+
 1.3.0
 =====
 
