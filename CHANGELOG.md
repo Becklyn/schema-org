@@ -3,6 +3,7 @@
 
 *   (improvement) Added `CreativeWork::$position`
 *   (deprecated) Deprecated `Becklyn\SchemaOrg\Schema`, use `Becklyn\SchemaOrg\TypeChecker\TypeChecker` instead.
+*   (feature) Validate nested array values in `TypeChecker` to validate against arrays.
 
 
 1.5.0

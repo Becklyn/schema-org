@@ -16,6 +16,19 @@ class TypeChecker
             return $isOptional;
         }
 
+        if (\is_array($value))
+        {
+            foreach ($value as $nestedValue)
+            {
+                if (!self::isValidValue($nestedValue, $isOptional, ...$allowedTypes))
+                {
+                    return false;
+                }
+            }
+
+            return 0 !== \count($value);
+        }
+
         foreach ($allowedTypes as $allowedType)
         {
             if ("string" === $allowedType)
