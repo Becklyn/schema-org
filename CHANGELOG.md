@@ -2,6 +2,7 @@
 =====
 
 *   (improvement) Added `CreativeWork::$position`
+*   (deprecated) Deprecated `Becklyn\SchemaOrg\Schema`, use `Becklyn\SchemaOrg\TypeChecker\TypeChecker` instead.
 
 
 1.5.0
