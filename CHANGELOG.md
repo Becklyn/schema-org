@@ -1,3 +1,9 @@
+1.6.0
+=====
+
+*   (improvement) Added `CreativeWork::$position`
+
+
 1.5.0
 =====
 

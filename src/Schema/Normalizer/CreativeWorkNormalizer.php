@@ -57,6 +57,7 @@ class CreativeWorkNormalizer extends ThingNormalizer
             "license" => $entity->getLicense(),
             "mainEntity" => $this->normalizeDataOrPrimitive($registry, $entity->getMainEntity(), $usage, $context, true),
             "maintainer" => $this->normalizeDataOrPrimitive($registry, $entity->getMaintainer(), $usage, $context, true),
+            "position" => $entity->getPosition(),
             "producer" => $this->normalizeDataOrPrimitive($registry, $entity->getProducer(), $usage, $context, true),
             "provider" => $this->normalizeDataOrPrimitive($registry, $entity->getProvider(), $usage, $context, true),
             "publisher" => $this->normalizeDataOrPrimitive($registry, $entity->getPublisher(), $usage, $context, true),

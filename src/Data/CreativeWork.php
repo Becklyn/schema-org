@@ -36,6 +36,8 @@ class CreativeWork extends Thing
      * @var Organization|Person|null
      */
     private $maintainer;
+    /** @var int|string|null */
+    private $position;
     /**
      * @var Organization|Person|null
      */
@@ -173,6 +175,15 @@ class CreativeWork extends Thing
     public function getMaintainer ()
     {
         return $this->maintainer;
+    }
+
+
+    /**
+     * @return int|string|null
+     */
+    public function getPosition ()
+    {
+        return $this->position;
     }
 
 
@@ -448,6 +459,22 @@ class CreativeWork extends Thing
 
         $clone = clone $this;
         $clone->maintainer = $maintainer;
+        return $clone;
+    }
+
+
+    /**
+     * @param int|string|null $position
+     *
+     * @return static
+     */
+    public function withPosition ($position)
+    {
+        TypeChecker::ensureIsValidValue($position, TypeChecker::OPTIONAL, "int", "string");
+
+        $clone = clone $this;
+        $clone->position = $position;
+
         return $clone;
     }
 
