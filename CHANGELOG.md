@@ -2,7 +2,7 @@
 =====
 
 *   (improvement) Added `CreativeWork::$position`
-*   (deprecated) Deprecated `Becklyn\SchemaOrg\Schema`, use `Becklyn\SchemaOrg\TypeChecker\TypeChecker` instead.
+*   (deprecation) Deprecated `Becklyn\SchemaOrg\Schema`, use `Becklyn\SchemaOrg\TypeChecker\TypeChecker` instead.
 *   (feature) Validate nested array values in `TypeChecker` to validate against arrays.
 *   (bug) Update `HowTo::$step`, `::$supply` and `::$tool` to accept an `array` (of various types) or `null`.
 *   (bug) Fix withers not correctly returning new cloned instance.
