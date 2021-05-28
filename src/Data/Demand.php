@@ -201,6 +201,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->availability = $availability;
+
         return $clone;
     }
 
@@ -212,6 +213,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->availabilityEnds = $availabilityEnds;
+
         return $clone;
     }
 
@@ -223,6 +225,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->availabilityStarts = $availabilityStarts;
+
         return $clone;
     }
 
@@ -234,6 +237,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->availableAtOrFrom = $availableAtOrFrom;
+
         return $clone;
     }
 
@@ -245,6 +249,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->businessFunction = $businessFunction;
+
         return $clone;
     }
 
@@ -272,6 +277,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->gtin = $gtin;
+
         return $clone;
     }
 
@@ -283,6 +289,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->gtin12 = $gtin12;
+
         return $clone;
     }
 
@@ -294,6 +301,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->gtin13 = $gtin13;
+
         return $clone;
     }
 
@@ -305,6 +313,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->gtin14 = $gtin14;
+
         return $clone;
     }
 
@@ -316,6 +325,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->gtin8 = $gtin8;
+
         return $clone;
     }
 
@@ -343,6 +353,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->inventoryLevel = $inventoryLevel;
+
         return $clone;
     }
 
@@ -354,6 +365,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->itemCondition = $itemCondition;
+
         return $clone;
     }
 
@@ -365,6 +377,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->priceSpecification = $priceSpecification;
+
         return $clone;
     }
 
@@ -378,8 +391,10 @@ class Demand extends Intangible
     {
         TypeChecker::ensureIsValidValue($seller, TypeChecker::OPTIONAL, Organization::class, Person::class);
 
-        $this->seller = $seller;
-        return $this;
+        $clone = clone $this;
+        $clone->seller = $seller;
+
+        return $clone;
     }
 
 
@@ -390,6 +405,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->serialNumber = $serialNumber;
+
         return $clone;
     }
 
@@ -401,6 +417,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->sku = $sku;
+
         return $clone;
     }
 
@@ -412,6 +429,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->validFrom = $validFrom;
+
         return $clone;
     }
 
@@ -423,6 +441,7 @@ class Demand extends Intangible
     {
         $clone = clone $this;
         $clone->validThrough = $validThrough;
+
         return $clone;
     }
     //endregion

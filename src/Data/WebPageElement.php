@@ -32,7 +32,8 @@ class WebPageElement extends CreativeWork
     {
         $clone = clone $this;
         $clone->cssSelector = $cssSelector;
-        return $this;
+
+        return $clone;
     }
 
 
@@ -43,7 +44,8 @@ class WebPageElement extends CreativeWork
     {
         $clone = clone $this;
         $clone->xpath = $xpath;
-        return $this;
+
+        return $clone;
     }
     //endregion
 }
