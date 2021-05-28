@@ -2,6 +2,7 @@
 
 namespace Becklyn\SchemaOrg\TypeChecker;
 
+use Becklyn\SchemaOrg\Data\Listing;
 use Becklyn\SchemaOrg\Exception\UnexpectedTypeException;
 
 class TypeChecker
@@ -16,9 +17,11 @@ class TypeChecker
             return $isOptional;
         }
 
-        if (\is_array($value))
+        if (\is_array($value) || $value instanceof Listing)
         {
-            foreach ($value as $nestedValue)
+            $entries = \is_array($value) ? $value : $value->getEntries();
+
+            foreach ($entries as $nestedValue)
             {
                 if (!self::isValidValue($nestedValue, $isOptional, ...$allowedTypes))
                 {
@@ -26,7 +29,7 @@ class TypeChecker
                 }
             }
 
-            return 0 !== \count($value);
+            return 0 !== \count($entries);
         }
 
         foreach ($allowedTypes as $allowedType)

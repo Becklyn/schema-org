@@ -11,11 +11,11 @@ class HowTo extends CreativeWork
     private $estimatedCost;
     private ?Duration $performTime = null;
     private ?Duration $prepTime = null;
-    /** @var CreativeWork[]|HowToSection[]|HowToStep[]|string[]|null */
+    /** @var CreativeWork[]|HowToSection[]|HowToStep[]|Listing|string[]|null */
     private $step;
-    /** @var HowToSupply[]|string[]|null */
+    /** @var HowToSupply[]|Listing|string[]|null */
     private $supply;
-    /** @var HowToTool[]|string[]|null */
+    /** @var HowToTool[]|Listing|string[]|null */
     private $tool;
     private ?Duration $totalTime = null;
     /** @var QuantitativeValue|string|null */
@@ -46,7 +46,7 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @return CreativeWork[]|HowToSection[]|HowToStep[]|string[]|null
+     * @return CreativeWork[]|HowToSection[]|HowToStep[]|Listing|string[]|null
      */
     public function getStep ()
     {
@@ -55,7 +55,7 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @return HowToSupply[]|string[]|null
+     * @return HowToSupply[]|Listing|string[]|null
      */
     public function getSupply ()
     {
@@ -64,7 +64,7 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @return HowToTool[]|string[]|null
+     * @return HowToTool[]|Listing|string[]|null
      */
     public function getTool ()
     {
@@ -130,13 +130,13 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @param CreativeWork[]|HowToSection[]|HowToStep[]|string[]|null $step
+     * @param CreativeWork[]|HowToSection[]|HowToStep[]|Listing|string[]|null $step
      *
      * @return static
      */
     public function withStep ($step)
     {
-        TypeChecker::ensureIsValidValue($step, TypeChecker::OPTIONAL, CreativeWork::class, HowToSection::class, HowToStep::class, "string");
+        TypeChecker::ensureIsValidValue($step, TypeChecker::OPTIONAL, CreativeWork::class, HowToSection::class, HowToStep::class, Listing::class, "string");
 
         $clone = clone $this;
         $clone->step = $step;
@@ -146,13 +146,13 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @param HowToSupply[]|string[]|null $supply
+     * @param HowToSupply[]|Listing|string[]|null $supply
      *
      * @return static
      */
     public function withSupply ($supply)
     {
-        TypeChecker::ensureIsValidValue($supply, TypeChecker::OPTIONAL, HowToSupply::class, "string");
+        TypeChecker::ensureIsValidValue($supply, TypeChecker::OPTIONAL, HowToSupply::class, Listing::class, "string");
 
         $clone = clone $this;
         $clone->supply = $supply;
@@ -162,13 +162,13 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @param HowToTool[]|string[]|null $tool
+     * @param HowToTool[]|Listing|string[]|null $tool
      *
      * @return static
      */
     public function withTool ($tool)
     {
-        TypeChecker::ensureIsValidValue($tool, TypeChecker::OPTIONAL, HowToTool::class, "string");
+        TypeChecker::ensureIsValidValue($tool, TypeChecker::OPTIONAL, HowToTool::class, Listing::class, "string");
 
         $clone = clone $this;
         $clone->tool = $tool;

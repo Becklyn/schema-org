@@ -6,6 +6,8 @@
 *   (feature) Validate nested array values in `TypeChecker` to validate against arrays.
 *   (bug) Update `HowTo::$step`, `::$supply` and `::$tool` to accept an `array` (of various types) or `null`.
 *   (bug) Fix withers not correctly returning new cloned instance.
+*   (feature) Add new data type: `Listing`. It doesn't map to any actual Schema.org type, as it's supposed to be a way to represent raw arrays without any type metadata,
+    as it is used for example inside the `FAQPage::$mainEntity`.
 
 
 1.5.0
