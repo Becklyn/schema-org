@@ -11,11 +11,11 @@ class HowTo extends CreativeWork
     private $estimatedCost;
     private ?Duration $performTime = null;
     private ?Duration $prepTime = null;
-    /** @var CreativeWork|HowToSection|HowToStep|string|null */
+    /** @var CreativeWork[]|HowToSection[]|HowToStep[]|string[]|null */
     private $step;
-    /** @var HowToSupply|string|null */
+    /** @var HowToSupply[]|string[]|null */
     private $supply;
-    /** @var HowToTool|string|null */
+    /** @var HowToTool[]|string[]|null */
     private $tool;
     private ?Duration $totalTime = null;
     /** @var QuantitativeValue|string|null */
@@ -46,7 +46,7 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @return CreativeWork|HowToSection|HowToStep|string|null
+     * @return CreativeWork[]|HowToSection[]|HowToStep[]|string[]|null
      */
     public function getStep ()
     {
@@ -55,7 +55,7 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @return HowToSupply|string|null
+     * @return HowToSupply[]|string[]|null
      */
     public function getSupply ()
     {
@@ -64,7 +64,7 @@ class HowTo extends CreativeWork
 
 
     /**
-     * @return HowToTool|string|null
+     * @return HowToTool[]|string[]|null
      */
     public function getTool ()
     {
@@ -101,7 +101,7 @@ class HowTo extends CreativeWork
         $clone = clone $this;
         $clone->estimatedCost = $estimatedCost;
 
-        return $this;
+        return $clone;
     }
 
 
@@ -113,7 +113,7 @@ class HowTo extends CreativeWork
         $clone = clone $this;
         $clone->performTime = $performTime;
 
-        return $this;
+        return $clone;
     }
 
 
@@ -125,12 +125,12 @@ class HowTo extends CreativeWork
         $clone = clone $this;
         $clone->prepTime = $prepTime;
 
-        return $this;
+        return $clone;
     }
 
 
     /**
-     * @param CreativeWork|HowToSection|HowToStep|string|null $step
+     * @param CreativeWork[]|HowToSection[]|HowToStep[]|string[]|null $step
      *
      * @return static
      */
@@ -141,12 +141,12 @@ class HowTo extends CreativeWork
         $clone = clone $this;
         $clone->step = $step;
 
-        return $this;
+        return $clone;
     }
 
 
     /**
-     * @param HowToSupply|string|null $supply
+     * @param HowToSupply[]|string[]|null $supply
      *
      * @return static
      */
@@ -157,12 +157,12 @@ class HowTo extends CreativeWork
         $clone = clone $this;
         $clone->supply = $supply;
 
-        return $this;
+        return $clone;
     }
 
 
     /**
-     * @param HowToTool|string|null $tool
+     * @param HowToTool[]|string[]|null $tool
      *
      * @return static
      */
@@ -173,7 +173,7 @@ class HowTo extends CreativeWork
         $clone = clone $this;
         $clone->tool = $tool;
 
-        return $this;
+        return $clone;
     }
 
 
@@ -185,7 +185,7 @@ class HowTo extends CreativeWork
         $clone = clone $this;
         $clone->totalTime = $totalTime;
 
-        return $this;
+        return $clone;
     }
 
 
