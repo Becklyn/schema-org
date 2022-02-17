@@ -1,7 +1,7 @@
 {
     "name": "becklyn/schema-org",
-    "type": "symfony-bundle",
     "license": "BSD-3-Clause",
+    "type": "symfony-bundle",
     "authors": [
         {
             "name": "Becklyn Studios",
@@ -9,20 +9,17 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": ">=7.4",
         "ext-json": "*",
-        "becklyn/rad-bundles": "^1.0",
-        "symfony/config": "^4.4.13 || ^5.1.5",
-        "symfony/dependency-injection": "^4.4.13 || ^5.1.5",
-        "symfony/http-kernel": "^4.4.13 || ^5.1.5",
-        "symfony/phpunit-bridge": "^5.1.5",
-        "twig/twig": "^2.11 || ^3.0"
+        "becklyn/rad-bundles": "^1.1.0",
+        "symfony/config": "^5.4.3 || ^6.0.3",
+        "symfony/dependency-injection": "^5.4.3 || ^6.0.3",
+        "symfony/http-kernel": "^5.4.3 || ^6.0.3",
+        "twig/twig": "^3.3.8"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master"
-    },
-    "config": {
-        "sort-packages": true
+        "roave/security-advisories": "dev-master",
+        "symfony/phpunit-bridge": "^5.1.5"
     },
     "autoload": {
         "psr-4": {
@@ -33,5 +30,8 @@
         "psr-4": {
             "Tests\\Becklyn\\SchemaOrg\\": "tests/"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
